@@ -1,13 +1,22 @@
 //@flow
 
 import React from "react";
+import { ScrollView } from "react-native";
+import { Text, Paragraph } from "react-native-paper";
+import styles from "../constants/Styles";
 
-export default class SettingsScreen extends React.Component {
+const about = require("../redux/data/rocks.json").about;
+
+export default class AboutScreen extends React.Component {
   static navigationOptions = {
-    title: "About"
+    title: "About Petra"
   };
 
   render() {
-    return null;
+    return (
+      <ScrollView style={styles.container}>
+        <Paragraph>{about}</Paragraph>
+      </ScrollView>
+    );
   }
 }

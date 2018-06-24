@@ -1,10 +1,14 @@
-import React from 'react';
-import { createSwitchNavigator } from 'react-navigation';
+import React from "react";
+import { createStackNavigator } from "react-navigation";
 
-import MainTabNavigator from './MainTabNavigator';
+import MainTabNavigator from "./MainTabNavigator";
+import RockDetailScreen from "../screens/RockDetailScreen";
 
-export default createSwitchNavigator({
+const nav = createStackNavigator({
   // You could add another route here for authentication.
   // Read more at https://reactnavigation.org/docs/en/auth-flow.html
-  Main: MainTabNavigator,
+  Main: { screen: MainTabNavigator, navigationOptions: { header: null } },
+  RockDetail: RockDetailScreen
 });
+
+export default nav;

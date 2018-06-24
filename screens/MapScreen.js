@@ -4,6 +4,7 @@ import React from "react";
 import { View } from "react-native";
 import { MapView } from "expo";
 import { connect } from "react-redux";
+import { Chip } from "react-native-paper";
 import { selectors as collectionSelectors } from "../redux/modules/collection";
 
 const mapStateToProps = state => ({
@@ -34,10 +35,23 @@ class HomeScreen extends React.Component {
           return (
             <MapView.Marker
               coordinate={{ latitude: rock.lat, longitude: rock.lon }}
-              title={rock.title}
-              description={rock.description}
+              title={rock.name}
+              description={rock.mineralComposition}
               key={rock.key}
-            />
+            >
+              <MapView.Callout
+                onPress={() => {
+                  this.props.navigation.push("RockDetail", {
+                    rockId: rock.key
+                  });
+                }}
+                tooltip
+              >
+                <Chip icon="search" style={{ backgroundColor: "white" }}>
+                  {rock.name}
+                </Chip>
+              </MapView.Callout>
+            </MapView.Marker>
           );
         })}
       </MapView>

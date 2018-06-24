@@ -1,11 +1,10 @@
 import React from "react";
 import { Platform } from "react-native";
-import {
-  createStackNavigator,
-  createBottomTabNavigator
-} from "react-navigation";
+import { createStackNavigator } from "react-navigation";
 
-import TabBarIcon from "../components/TabBarIcon";
+import { createMaterialBottomTabNavigator } from "react-navigation-material-bottom-tabs";
+
+import { tabBarIcon } from "../components/TabBarIcon";
 import MapScreen from "../screens/MapScreen";
 import CollectionScreen from "../screens/CollectionScreen";
 import AboutScreen from "../screens/AboutScreen";
@@ -15,39 +14,32 @@ import RockDetailScreen from "../screens/RockDetailScreen";
 
 // Google maps
 const MapStack = createStackNavigator({
-  Map: MapScreen,
-  RockDetail: RockDetailScreen
+  Map: MapScreen
 });
 
 MapStack.navigationOptions = {
   tabBarLabel: "Map",
-  tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name={"map"} />
+  tabBarIcon: tabBarIcon("map")
 };
 
 // Rock collection list
 const CollectionStack = createStackNavigator({
-  Collection: CollectionScreen,
-  RockDetail: RockDetailScreen
+  Collection: CollectionScreen
 });
 
 CollectionStack.navigationOptions = {
   tabBarLabel: "Collection",
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={"collections"} />
-  )
+  tabBarIcon: tabBarIcon("collections")
 };
 
 // QR scanner screen
 const RockScannerStack = createStackNavigator({
-  RockScanner: RockScannerScreen,
-  RockDetail: RockDetailScreen
+  RockScanner: RockScannerScreen
 });
 
 RockScannerStack.navigationOptions = {
   tabBarLabel: "Scan",
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon focused={focused} name={"fullscreen"} />
-  )
+  tabBarIcon: tabBarIcon("fullscreen")
 };
 
 // About Petra screen
@@ -57,10 +49,10 @@ const AboutStack = createStackNavigator({
 
 AboutStack.navigationOptions = {
   tabBarLabel: "About",
-  tabBarIcon: ({ focused }) => <TabBarIcon focused={focused} name={"info"} />
+  tabBarIcon: tabBarIcon("info")
 };
 
-export default createBottomTabNavigator({
+export default createMaterialBottomTabNavigator({
   MapStack,
   CollectionStack,
   RockScannerStack,

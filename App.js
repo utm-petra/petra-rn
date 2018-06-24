@@ -1,13 +1,13 @@
 // @flow
 
 import React from "react";
-import { View } from "react-native";
+import { View, StatusBar } from "react-native";
 
 // the StoreProvider will link our app to the Redux store we created
 import { Provider as StoreProvider, connect } from "react-redux";
 
 // the PaperProvider will provide our app with theming and design by Paper
-import { Provider as PaperProvider } from "react-native-paper";
+import { Provider as PaperProvider, DefaultTheme } from "react-native-paper";
 
 // the app navigation framework setup in React Navigation
 import AppNavigator from "./navigation/AppNavigator";
@@ -48,6 +48,14 @@ class AppWithNavigation extends React.Component {
   }
 }
 
+const theme = {
+  ...DefaultTheme,
+  roundness: 4,
+  colors: {
+    ...DefaultTheme.colors
+  }
+};
+
 const ConnectedApp = connect(
   mapStateToProps,
   mapDispatchToProps
@@ -57,8 +65,9 @@ export default class App extends React.Component {
   render() {
     return (
       <StoreProvider store={store}>
-        <PaperProvider>
+        <PaperProvider theme={theme}>
           <PersistGate persistor={persistor} loading={null}>
+            <StatusBar backgroundColor={theme.colors.primaryDark} />
             <ConnectedApp />
           </PersistGate>
         </PaperProvider>

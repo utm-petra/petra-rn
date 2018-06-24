@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "petra-rn",
-    "description": "A very interesting project.",
+    "name": "Petra",
+    "description": "Explore UTM's rock collection",
     "slug": "petra-rn",
     "privacy": "public",
     "sdkVersion": "28.0.0",
@@ -18,7 +18,6 @@
       "fallbackToCacheTimeout": 0
     },
     "assetBundlePatterns": ["**/*"],
-
     "ios": {
       "supportsTablet": true
     }

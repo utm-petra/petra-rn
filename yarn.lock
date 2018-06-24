@@ -4421,6 +4421,13 @@ rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-addons-shallow-compare@15.6.2:
+  version "15.6.2"
+  resolved "https://registry.yarnpkg.com/react-addons-shallow-compare/-/react-addons-shallow-compare-15.6.2.tgz#198a00b91fc37623db64a28fd17b596ba362702f"
+  dependencies:
+    fbjs "^0.8.4"
+    object-assign "^4.1.0"
+
 react-clone-referenced-element@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/react-clone-referenced-element/-/react-clone-referenced-element-1.0.1.tgz#2bba8c69404c5e4a944398600bcc4c941f860682"
@@ -4479,6 +4486,16 @@ react-native-maps@0.21.0:
     babel-plugin-module-resolver "^2.3.0"
     babel-preset-react-native "1.9.0"
 
+react-native-paper@2.0.0-alpha.4:
+  version "2.0.0-alpha.4"
+  resolved "https://registry.yarnpkg.com/react-native-paper/-/react-native-paper-2.0.0-alpha.4.tgz#2186fd85e3e5aee368a0861f6a302015e76f24d9"
+  dependencies:
+    color "^2.0.1"
+    create-react-context "^0.2.2"
+    deepmerge "^2.1.0"
+    hoist-non-react-statics "^2.5.0"
+    react-lifecycles-compat "^3.0.4"
+
 react-native-paper@^1.11.0:
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/react-native-paper/-/react-native-paper-1.11.0.tgz#f4900553315eefcf3a8857d80b2e9dc159398a9f"
@@ -4514,6 +4531,13 @@ react-native-safe-module@^1.1.0:
   resolved "https://registry.yarnpkg.com/react-native-safe-module/-/react-native-safe-module-1.2.0.tgz#a23824ca24edc2901913694a76646475113d570d"
   dependencies:
     dedent "^0.6.0"
+
+react-native-snap-carousel@^3.7.2:
+  version "3.7.2"
+  resolved "https://registry.yarnpkg.com/react-native-snap-carousel/-/react-native-snap-carousel-3.7.2.tgz#da94f7b16076ec055c0980d169d1f85eef852d03"
+  dependencies:
+    prop-types "^15.6.1"
+    react-addons-shallow-compare "15.6.2"
 
 react-native-svg@6.2.2:
   version "6.2.2"
@@ -4619,9 +4643,28 @@ react-navigation-drawer@0.3.0:
   dependencies:
     react-native-drawer-layout-polyfill "^1.3.2"
 
+react-navigation-material-bottom-tabs@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/react-navigation-material-bottom-tabs/-/react-navigation-material-bottom-tabs-0.3.0.tgz#7fae682a41c1c290f2584fe50879e36b41da5394"
+  dependencies:
+    hoist-non-react-statics "^2.5.0"
+    prop-types "^15.6.0"
+    react-native-paper "2.0.0-alpha.4"
+    react-navigation-tabs "^0.4.0"
+
 react-navigation-tabs@0.5.1:
   version "0.5.1"
   resolved "https://registry.yarnpkg.com/react-navigation-tabs/-/react-navigation-tabs-0.5.1.tgz#ed33bce3a3e21b92646700de25bd94b8fc570371"
+  dependencies:
+    hoist-non-react-statics "^2.5.0"
+    prop-types "^15.6.1"
+    react-lifecycles-compat "^3.0.4"
+    react-native-safe-area-view "^0.7.0"
+    react-native-tab-view "^1.0.0"
+
+react-navigation-tabs@^0.4.0:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/react-navigation-tabs/-/react-navigation-tabs-0.4.1.tgz#b367535c1b00fc2046341ae93cb8d3e8e0b96a11"
   dependencies:
     hoist-non-react-statics "^2.5.0"
     prop-types "^15.6.1"
