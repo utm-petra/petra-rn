@@ -11,9 +11,12 @@ import CollectionScreen from "../screens/CollectionScreen";
 import AboutScreen from "../screens/AboutScreen";
 import RockScannerScreen from "../screens/RockScannerScreen";
 
+import RockDetailScreen from "../screens/RockDetailScreen";
+
 // Google maps
 const MapStack = createStackNavigator({
-  Map: MapScreen
+  Map: MapScreen,
+  RockDetail: RockDetailScreen
 });
 
 MapStack.navigationOptions = {
@@ -23,7 +26,8 @@ MapStack.navigationOptions = {
 
 // Rock collection list
 const CollectionStack = createStackNavigator({
-  Collection: CollectionScreen
+  Collection: CollectionScreen,
+  RockDetail: RockDetailScreen
 });
 
 CollectionStack.navigationOptions = {
@@ -35,7 +39,8 @@ CollectionStack.navigationOptions = {
 
 // QR scanner screen
 const RockScannerStack = createStackNavigator({
-  RockScanner: RockScannerScreen
+  RockScanner: RockScannerScreen,
+  RockDetail: RockDetailScreen
 });
 
 RockScannerStack.navigationOptions = {

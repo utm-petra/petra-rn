@@ -32,7 +32,16 @@ class CollectionScreen extends React.Component {
           style={styles.list}
           data={data}
           keyExtractor={item => item.key}
-          renderItem={({ item }) => <RockListItem id={item.key} />}
+          renderItem={({ item }) => (
+            <RockListItem
+              id={item.key}
+              onPress={() =>
+                this.props.navigation.navigate("RockDetail", {
+                  rockId: item.key
+                })
+              }
+            />
+          )}
         />
       </View>
     );

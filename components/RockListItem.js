@@ -12,7 +12,13 @@ const mapStateToProps = (state, ownProps) => {
 class RockListItem extends React.PureComponent {
   render() {
     const { rock } = this.props;
-    return <ListItem title={rock.name} description={rock.mineralComposition} />;
+    return (
+      <ListItem
+        title={rock.name}
+        description={rock.mineralComposition}
+        {...this.props}
+      />
+    );
   }
 }
 
