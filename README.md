@@ -1,7 +1,7 @@
 # Petra
 ## An app for exploring UTM's awesome rock collection, built in React Native
 
-Petra is a simple app that displays information about each of the 31 rocks around the UTM campus. The app was originally built for Android by Adi Sripathi. Mitchell McMillan ported it to React Native. The app is architected for ease of extending its features in the future, by other students. In such cases, the information provided here will be vital.
+Petra is a simple app that displays information about each of the 31 rocks around the UTM campus. The app was originally built for Android by Adi Sripathi and [Ramy Rafaat Esteero](https://github.com/esteeroramy). [Mitchell McMillan](http://www.mitchell-mcmillan.com/) ported it to React Native. The app is architected for ease of extending its features in the future, by other students. In such cases, the information provided here will be vital.
 
 ### React Native
 
