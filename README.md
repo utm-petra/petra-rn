@@ -19,6 +19,16 @@ Google's Material Design provides a standard for building user interfaces on mob
 
 Redux is a tried and true state management paradigm and was chosen for Petra's state. Broadly speaking, *state* is the data (javascript objects and primitives) about the App that changes over time as the user interacts with the UI; it describes the underlying state of the app. Redux encapsulates most or all of the state into a single javascript object, which is immutable. The object, and thus the state, can only be modified by `dispatch`ing objects called `action`s. Actions are handled by one or more `reducers`. An `action` contains a `type` property and a `payload` property; the `type` tells the reducer what the action does, and the `payload` contains any data the reducer may need to perform the action (for example, a string representing a modified description for a rock). The details of how Redux is implemented for Petra are described below.
 
+## Resources
+
+Before digging into the source code, get familiar with these concepts
+
+- [React Native](https://facebook.github.io/react-native/docs/tutorial.html)
+- [Expo](https://docs.expo.io/versions/latest/)
+- [Redux](https://redux.js.org/)
+- [React Navigatioin](https://reactnavigation.org/docs/en/getting-started.html)
+- [Material Design/Paper](https://callstack.github.io/react-native-paper/)
+
 ## Modifying the javascript source
 
 The source code consists largely of javascript files that describe the UI, business logic, and state of the app. They were originally written in Visual Studio Code, but any text editor or IDE can be used to write javascript. However, it is recommended to use Flow for type checking. VS Code has integrations for React Native and Flow that make this setup easy. In addition, the ESLint and Prettier extensions automatically format the code according to a set of rules, which makes maintaining a consistent coding style trivial.
@@ -49,7 +59,11 @@ This folder contains the logic needed to setup navigation for Petra. Navigation 
 
 ### The `redux` folder
 
-This folder encapsulates all logic relating to the app's state. The top-level files in `redux` contain functions for creating reducers, defining the store, and definitions for valid `action` types. The `redux` folder structure is meticulously set up to be fully typed. This is the goal: you shouldn't be able to dispatch an action that the reducers won't know how to handle; your reducers shouldn't be able to update state in a way that would result in an error. For example, you could make a typo in the action type ("SET_PREF" vs "SET_PERF" for example). You could also try to modify a property of your state that doesn't exist (`state.pref = true` vs `state.perf = true`). Flow can help make sure this doesn't happen by alerting us to type errors. Although this makes the whole redux flow quite verbose, it's worth it; errors and typos are much harder to make. To illustrate this, here's how you would go about creating a new redux action. Let's say you want to let the user set the color theme to "dark mode".
+This folder encapsulates all logic relating to the app's state. 
+
+>**Important**: The `data` folder contains `rocks.json`, the main database for the UTM rock collection. The database is an array of JSON objects, which can be easily parsed and read by any programming language. Each JSON object represents a rock and contains information such as its lat/lon coordinates, description, and mineral composition. For javascript, it is trivial to convert this into an array of javascript objects using `require("./path/to/rocks.json")`. The array can then be used to "hydrate" the redux store with this information.
+
+The top-level files in `redux` contain functions for creating reducers, defining the store, and definitions for valid `action` types. The `redux` folder structure is meticulously set up to be fully typed. This is the goal: you shouldn't be able to dispatch an action that the reducers won't know how to handle; your reducers shouldn't be able to update state in a way that would result in an error. For example, you could make a typo in the action type ("SET_PREF" vs "SET_PERF" for example). You could also try to modify a property of your state that doesn't exist (`state.pref = true` vs `state.perf = true`). Flow can help make sure this doesn't happen by alerting us to type errors. Although this makes the whole redux flow quite verbose, it's worth it; errors and typos are much harder to make. To illustrate this, here's how you would go about creating a new redux action. Let's say you want to let the user set the color theme to "dark mode".
 
 - Start in `actions.js` and define the action type as something like the following. The `type` property is required. The `payload` is optional; in this case it would be a boolean that says whether the user wants dark mode (true) or light mode (false).
 
