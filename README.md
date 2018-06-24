@@ -19,6 +19,16 @@ Google's Material Design provides a standard for building user interfaces on mob
 
 Redux is a tried and true state management paradigm and was chosen for Petra's state. Broadly speaking, *state* is the data (javascript objects and primitives) about the App that changes over time as the user interacts with the UI; it describes the underlying state of the app. Redux encapsulates most or all of the state into a single javascript object, which is immutable. The object, and thus the state, can only be modified by `dispatch`ing objects called `action`s. Actions are handled by one or more `reducers`. An `action` contains a `type` property and a `payload` property; the `type` tells the reducer what the action does, and the `payload` contains any data the reducer may need to perform the action (for example, a string representing a modified description for a rock). The details of how Redux is implemented for Petra are described below.
 
+## Resources
+
+Before digging into the source code, get familiar with these concepts
+
+- [React Native](https://facebook.github.io/react-native/docs/tutorial.html)
+- [Expo](https://docs.expo.io/versions/latest/)
+- [Redux](https://redux.js.org/)
+- [React Navigatioin](https://reactnavigation.org/docs/en/getting-started.html)
+- [Material Design/Paper](https://callstack.github.io/react-native-paper/)
+
 ## Modifying the javascript source
 
 The source code consists largely of javascript files that describe the UI, business logic, and state of the app. They were originally written in Visual Studio Code, but any text editor or IDE can be used to write javascript. However, it is recommended to use Flow for type checking. VS Code has integrations for React Native and Flow that make this setup easy. In addition, the ESLint and Prettier extensions automatically format the code according to a set of rules, which makes maintaining a consistent coding style trivial.
