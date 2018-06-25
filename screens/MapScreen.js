@@ -84,13 +84,17 @@ class HomeScreen extends React.Component {
           style={{ flex: 1 }}
           region={this.state.region}
           onRegionChange={this._onRegionChange}
+          mapType="hybrid"
         >
           {ids.map(id => {
             const rock = byId[id];
             if (!rock) return null;
             return (
               <MapView.Marker
-                coordinate={{ latitude: rock.lat, longitude: rock.lon }}
+                coordinate={{
+                  latitude: rock.lat,
+                  longitude: rock.lon
+                }}
                 title={rock.name}
                 description={rock.mineralComposition}
                 key={rock.key}

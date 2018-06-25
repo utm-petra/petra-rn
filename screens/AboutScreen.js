@@ -14,7 +14,10 @@ export default class AboutScreen extends React.Component {
 
   render() {
     return (
-      <ScrollView style={styles.container}>
+      <ScrollView
+        style={styles.container}
+        contentContainerStyle={{ padding: 8 }}
+      >
         <Paragraph>{about}</Paragraph>
       </ScrollView>
     );

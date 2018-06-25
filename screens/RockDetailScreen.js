@@ -65,14 +65,16 @@ class RockDetailScreen extends React.Component {
           sliderWidth={w}
           sliderHeight={h}
         />
-        <Card>
-          <CardContent>
-            <Title>{rock.name}</Title>
-            <Subheading>{rock.mineralComposition}</Subheading>
-            <Paragraph>{rock.texture}</Paragraph>
-            <Paragraph>{rock.interpretation}</Paragraph>
-          </CardContent>
-        </Card>
+        <View style={{ padding: 8 }}>
+          <Card>
+            <CardContent>
+              <Title>{rock.name}</Title>
+              <Subheading>{rock.mineralComposition}</Subheading>
+              <Paragraph>{rock.texture}</Paragraph>
+              <Paragraph>{rock.interpretation}</Paragraph>
+            </CardContent>
+          </Card>
+        </View>
       </ScrollView>
     );
   }
