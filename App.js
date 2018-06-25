@@ -7,7 +7,7 @@ import { View, StatusBar } from "react-native";
 import { Provider as StoreProvider, connect } from "react-redux";
 
 // the PaperProvider will provide our app with theming and design by Paper
-import { Provider as PaperProvider, DefaultTheme } from "react-native-paper";
+import { Provider as PaperProvider, withTheme } from "react-native-paper";
 
 // the app navigation framework setup in React Navigation
 import AppNavigator from "./navigation/AppNavigator";
@@ -26,48 +26,45 @@ import {
   hydrateCollectionFromFile
 } from "./redux/modules/collection";
 
+import { colorTheme } from "./constants/Colors";
+
 const mapStateToProps = state => ({
-  empty:
-    collectionSelectors.ids(state) &&
-    collectionSelectors.byId(state).length === 0
+  empty: collectionSelectors.ids(state).length === 0
 });
 
 const mapDispatchToProps = { hydrateCollectionFromFile };
 
 class AppWithNavigation extends React.Component {
   componentDidMount() {
-    this.props.hydrateCollectionFromFile();
+    if (this.props.empty) {
+      this.props.hydrateCollectionFromFile();
+    }
   }
 
   render() {
     return (
       <View style={styles.container}>
-        <AppNavigator />
+        <StatusBar
+          backgroundColor={this.props.theme.colors.primaryDark}
+          barStyle="dark-content"
+        />
+        <AppNavigator screenProps={{ theme: this.props.theme }} />
       </View>
     );
   }
 }
 
-const theme = {
-  ...DefaultTheme,
-  roundness: 4,
-  colors: {
-    ...DefaultTheme.colors
-  }
-};
-
 const ConnectedApp = connect(
   mapStateToProps,
   mapDispatchToProps
-)(AppWithNavigation);
+)(withTheme(AppWithNavigation));
 
 export default class App extends React.Component {
   render() {
     return (
       <StoreProvider store={store}>
-        <PaperProvider theme={theme}>
+        <PaperProvider theme={colorTheme}>
           <PersistGate persistor={persistor} loading={null}>
-            <StatusBar backgroundColor={theme.colors.primaryDark} />
             <ConnectedApp />
           </PersistGate>
         </PaperProvider>

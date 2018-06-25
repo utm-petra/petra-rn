@@ -14,7 +14,6 @@ import { reducer as collection } from "./modules/collection";
 const persistConfig = {
   key: "root",
   storage,
-  blacklist: ["collection"],
   timeout: 10000
 };
 

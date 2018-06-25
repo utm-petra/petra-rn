@@ -9,4 +9,9 @@ type SetCollectionAction = {
   payload: { ids: string[], byId: {} }
 };
 
-export type Action = SetCollectionAction;
+type AddScannedRockIdAction = {
+  type: "SCANNED_ROCK_ID_ADD",
+  payload: string
+};
+
+export type Action = SetCollectionAction | AddScannedRockIdAction;

@@ -14,12 +14,17 @@ import {
 } from "react-native-paper";
 import { BarCodeScanner, Permissions } from "expo";
 import { connect } from "react-redux";
-import { selectors as getCollection } from "../redux/modules/collection";
+import {
+  selectors as getCollection,
+  visitRockId
+} from "../redux/modules/collection";
 
 const mapStateToProps = state => ({
   byId: getCollection.byId(state),
   ids: getCollection.ids(state)
 });
+
+const mapDispatchToProps = { visitRockId };
 
 class RockScannerScreen extends React.Component {
   static navigationOptions = {
@@ -43,22 +48,41 @@ class RockScannerScreen extends React.Component {
     this.didFocusSub = this.props.navigation.addListener(
       "didFocus",
       payload => {
-        this.setState({ showCamera: true, dialogVisible: false });
+        this.setState({
+          showCamera: true,
+          dialogVisible: false,
+          qrCode: "",
+          scannedRockId: ""
+        });
       }
     );
 
     this.didBlurSub = this.props.navigation.addListener("didBlur", payload => {
-      this.setState({ showCamera: false, dialogVisible: false });
+      this.setState({
+        showCamera: false,
+        dialogVisible: false,
+        qrCode: "",
+        scannedRockId: ""
+      });
     });
   }
 
-  _hideDialog = () => this.setState({ dialogVisible: false });
+  _hideDialog = () =>
+    this.setState({ dialogVisible: false, qrCode: "", scannedRockId: "" });
 
   _navigate = () => {
-    this.setState({ dialogVisible: false, showCamera: false }, () =>
-      this.props.navigation.push("RockDetail", {
-        rockId: this.state.scannedRockId
-      })
+    const id = this.state.scannedRockId;
+    this.setState(
+      {
+        dialogVisible: false,
+        showCamera: false,
+        qrCode: "",
+        scannedRockId: ""
+      },
+      () =>
+        this.props.navigation.push("RockDetail", {
+          rockId: id
+        })
     );
   };
 
@@ -119,16 +143,21 @@ class RockScannerScreen extends React.Component {
   _handleBarCodeRead = ({ type, data }) => {
     this.setState({ qrCode: data });
     if (!this.state.dialogVisible) {
-      this.setState({ dialogVisible: true });
       const rocks = this.props.ids
         .map(id => this.props.byId[id])
         .filter(o => o.qrCode === data);
       if (rocks.length > 0) {
         const rock = rocks[0];
-        this.setState({ scannedRockId: rock.key });
+        this.props.visitRockId(rock.key);
+        this.setState({ scannedRockId: rock.key, dialogVisible: true });
+      } else {
+        //alert("Hmm... I don't recognize that.");
       }
     }
   };
 }
 
-export default connect(mapStateToProps)(RockScannerScreen);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(RockScannerScreen);

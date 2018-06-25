@@ -2,14 +2,19 @@
 
 import React from "react";
 import { ScrollView } from "react-native";
-import { Text, Paragraph } from "react-native-paper";
+import { Text, Paragraph, ToolbarContent } from "react-native-paper";
 import styles from "../constants/Styles";
 
 const about = require("../redux/data/rocks.json").about;
 
 export default class AboutScreen extends React.Component {
-  static navigationOptions = {
-    title: "About Petra"
+  static navigationOptions = ({ screenProps }) => {
+    return {
+      headerTitle: <ToolbarContent title="About Petra" />,
+      headerStyle: {
+        backgroundColor: screenProps.theme.colors.primary
+      }
+    };
   };
 
   render() {

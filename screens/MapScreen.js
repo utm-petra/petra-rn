@@ -3,9 +3,12 @@
 import React from "react";
 import { View, Platform } from "react-native";
 import { MapView, Constants, Location, Permissions } from "expo";
+import { MaterialIcons, FontAwesome } from "@expo/vector-icons";
+
 import { connect } from "react-redux";
-import { Chip, FAB } from "react-native-paper";
+import { Chip, FAB, withTheme } from "react-native-paper";
 import { selectors as collectionSelectors } from "../redux/modules/collection";
+import { colorsForRockType } from "../constants/Colors";
 
 const initialRegion = {
   latitude: 43.547389,
@@ -16,7 +19,8 @@ const initialRegion = {
 
 const mapStateToProps = state => ({
   ids: collectionSelectors.ids(state),
-  byId: collectionSelectors.byId(state)
+  byId: collectionSelectors.byId(state),
+  scannedRockIds: collectionSelectors.scannedRockIds(state)
 });
 
 class HomeScreen extends React.Component {
@@ -84,11 +88,16 @@ class HomeScreen extends React.Component {
           style={{ flex: 1 }}
           region={this.state.region}
           onRegionChange={this._onRegionChange}
-          mapType="hybrid"
+          //mapType="hybrid"
         >
           {ids.map(id => {
             const rock = byId[id];
             if (!rock) return null;
+            const color =
+              rock.type && colorsForRockType.hasOwnProperty(rock.type)
+                ? colorsForRockType[rock.type]
+                : colorsForRockType.other;
+            const alreadyScanned = this.props.scannedRockIds.includes(rock.key);
             return (
               <MapView.Marker
                 coordinate={{
@@ -98,6 +107,7 @@ class HomeScreen extends React.Component {
                 title={rock.name}
                 description={rock.mineralComposition}
                 key={rock.key}
+                pinColor={alreadyScanned ? color : "linen"}
               >
                 <MapView.Callout
                   onPress={() => {
@@ -123,8 +133,13 @@ class HomeScreen extends React.Component {
                   latitude: location.latitude,
                   longitude: location.longitude
                 }}
-                pinColor={"blue"}
-              />
+              >
+                <MaterialIcons
+                  name={"radio-button-checked"}
+                  size={36}
+                  color={"blue"}
+                />
+              </MapView.Marker>
             )}
         </MapView.Animated>
         <View
@@ -146,11 +161,11 @@ class HomeScreen extends React.Component {
             style={{ marginBottom: 12 }}
             color="white"
           />
-          <FAB icon="home" onPress={this._resetRegion} color="white" />
+          <FAB icon="location-on" onPress={this._resetRegion} color="white" />
         </View>
       </View>
     );
   }
 }
 
-export default connect(mapStateToProps)(HomeScreen);
+export default connect(mapStateToProps)(withTheme(HomeScreen));

@@ -1,16 +1,14 @@
 import React from "react";
 import { Platform } from "react-native";
 import { createStackNavigator } from "react-navigation";
-
 import { createMaterialBottomTabNavigator } from "react-navigation-material-bottom-tabs";
 
+import { colorTheme } from "../constants/Colors";
 import { tabBarIcon } from "../components/TabBarIcon";
 import MapScreen from "../screens/MapScreen";
 import CollectionScreen from "../screens/CollectionScreen";
 import AboutScreen from "../screens/AboutScreen";
 import RockScannerScreen from "../screens/RockScannerScreen";
-
-import RockDetailScreen from "../screens/RockDetailScreen";
 
 // Google maps
 const MapStack = createStackNavigator({
@@ -29,7 +27,7 @@ const CollectionStack = createStackNavigator({
 
 CollectionStack.navigationOptions = {
   tabBarLabel: "Collection",
-  tabBarIcon: tabBarIcon("collections")
+  tabBarIcon: tabBarIcon("view-list")
 };
 
 // QR scanner screen
@@ -52,9 +50,14 @@ AboutStack.navigationOptions = {
   tabBarIcon: tabBarIcon("info")
 };
 
-export default createMaterialBottomTabNavigator({
-  MapStack,
-  CollectionStack,
-  RockScannerStack,
-  AboutStack
-});
+export default createMaterialBottomTabNavigator(
+  {
+    MapStack,
+    CollectionStack,
+    RockScannerStack,
+    AboutStack
+  },
+  {
+    barStyle: { backgroundColor: colorTheme.colors.primary }
+  }
+);

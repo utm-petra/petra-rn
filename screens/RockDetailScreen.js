@@ -18,15 +18,31 @@ import {
 } from "react-native-paper";
 import Carousel from "react-native-snap-carousel";
 import { connect } from "react-redux";
+import { MaterialIcons } from "@expo/vector-icons";
 
 import { selectors as collectionSelectors } from "../redux/modules/collection";
 import Layout from "../constants/Layout";
+import { colorsForRockType } from "../constants/Colors";
 
 const mapStateToProps = (state, ownProps) => ({
-  rock: collectionSelectors.byId(state)[ownProps.navigation.state.params.rockId]
+  rock: collectionSelectors.byId(state)[
+    ownProps.navigation.state.params.rockId
+  ],
+  visited: collectionSelectors
+    .scannedRockIds(state)
+    .includes(ownProps.navigation.state.params.rockId)
 });
 
 class RockDetailScreen extends React.Component {
+  static navigationOptions = ({ screenProps, navigation }) => {
+    return {
+      headerTintColor: screenProps.theme.colors.text,
+      headerStyle: {
+        backgroundColor: screenProps.theme.colors.primary
+      }
+    };
+  };
+
   _carousel: Carousel;
 
   _renderItem({ item, index }) {
@@ -68,7 +84,26 @@ class RockDetailScreen extends React.Component {
         <View style={{ padding: 8 }}>
           <Card>
             <CardContent>
-              <Title>{rock.name}</Title>
+              <View style={{ flexDirection: "row", alignItems: "center" }}>
+                <Headline>{rock.name}</Headline>
+                {this.props.visited && (
+                  <MaterialIcons
+                    name="done"
+                    size={28}
+                    style={{ marginLeft: 8 }}
+                    color={this.props.theme.colors.disabled}
+                  />
+                )}
+              </View>
+              <Title
+                style={{
+                  color: colorsForRockType.hasOwnProperty(rock.type)
+                    ? colorsForRockType[rock.type]
+                    : this.props.theme.colors.text
+                }}
+              >
+                {rock.type}
+              </Title>
               <Subheading>{rock.mineralComposition}</Subheading>
               <Paragraph>{rock.texture}</Paragraph>
               <Paragraph>{rock.interpretation}</Paragraph>

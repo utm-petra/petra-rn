@@ -11,12 +11,13 @@ const mapStateToProps = (state, ownProps) => {
 
 class RockListItem extends React.PureComponent {
   render() {
-    const { rock } = this.props;
+    const { rock, visited } = this.props;
     return (
       <ListItem
         title={rock.name}
         description={rock.mineralComposition}
         {...this.props}
+        icon={visited ? "check" : ""}
       />
     );
   }

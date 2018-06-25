@@ -1,5 +1,6 @@
 import React from "react";
 import { createStackNavigator } from "react-navigation";
+import { Toolbar } from "react-native-paper";
 
 import MainTabNavigator from "./MainTabNavigator";
 import RockDetailScreen from "../screens/RockDetailScreen";
