@@ -43,12 +43,14 @@ const INITIAL_STATE: State = {
 };
 
 const reducer = createReducer(INITIAL_STATE, {
-  COLLECTION_SET: (state, action) => ({
-    ...state,
-    ids: action.payload.ids,
-    byId: action.payload.byId
-  }),
-  SCANNED_ROCK_ID_ADD: (state: State, action: Action) => ({
+  COLLECTION_SET: (state, action) => {
+    return {
+      ...state,
+      ids: action.payload.ids,
+      byId: action.payload.byId
+    };
+  },
+  SCANNED_ROCK_ID_ADD: (state, action) => ({
     ...state,
     scannedRocks: { ...state.scannedRocks, [action.payload]: true }
   })
