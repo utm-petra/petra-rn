@@ -4,9 +4,11 @@
 // actions: VerbNounAction
 // action types: NOUN_VERB
 
+import type { Rock } from "../constants/Types";
+
 type SetCollectionAction = {
   type: "COLLECTION_SET",
-  payload: { ids: string[], byId: {} }
+  payload: { ids: string[], byId: { [id: string]: Rock } }
 };
 
 type AddScannedRockIdAction = {

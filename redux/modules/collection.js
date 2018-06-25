@@ -4,6 +4,8 @@ import createReducer from "../createReducer";
 import type { Action } from "../actions";
 import type { Store, ThunkAction } from "../store";
 import { createSelector } from "reselect";
+import type { Rock } from "../../constants/Types";
+import type { State as EntireState } from "../state";
 
 // import the rock data, which is an array of objects
 import dat from "../data/rocks";
@@ -30,8 +32,8 @@ export function visitRockId(id: string): ThunkAction {
 
 type State = {
   +ids: string[],
-  +byId: {},
-  +scannedRocks: {| [id: string]: boolean |}
+  +byId: { [id: string]: Rock },
+  +scannedRocks: { [id: string]: boolean }
 };
 
 const INITIAL_STATE: State = {
@@ -41,7 +43,7 @@ const INITIAL_STATE: State = {
 };
 
 const reducer = createReducer(INITIAL_STATE, {
-  COLLECTION_SET: (state: State, action: Action) => ({
+  COLLECTION_SET: (state, action) => ({
     ...state,
     ids: action.payload.ids,
     byId: action.payload.byId
@@ -52,9 +54,9 @@ const reducer = createReducer(INITIAL_STATE, {
   })
 });
 
-const getIds = state => state.collection.ids;
-const getById = state => state.collection.byId;
-const getScannedRocks = state => state.collection.scannedRocks;
+const getIds = (state: EntireState) => state.collection.ids;
+const getById = (state: EntireState) => state.collection.byId;
+const getScannedRocks = (state: EntireState) => state.collection.scannedRocks;
 const getScannedRockIds = createSelector([getScannedRocks], o =>
   Object.keys(o).filter(k => o[k])
 );

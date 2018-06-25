@@ -18,6 +18,7 @@ import {
   selectors as getCollection,
   visitRockId
 } from "../redux/modules/collection";
+import type { Rock } from "../constants/Types";
 
 const mapStateToProps = state => ({
   byId: getCollection.byId(state),
@@ -26,7 +27,22 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = { visitRockId };
 
-class RockScannerScreen extends React.Component {
+type Props = {
+  byId: { [id: string]: Rock },
+  ids: string[],
+  navigation: any,
+  visitRockId: Function
+};
+
+type State = {
+  hasCameraPermission: null | boolean,
+  dialogVisible: boolean,
+  qrCode: string,
+  scannedRockId: string,
+  showCamera: boolean
+};
+
+class RockScannerScreen extends React.Component<Props, State> {
   static navigationOptions = {
     header: null
   };
@@ -38,6 +54,7 @@ class RockScannerScreen extends React.Component {
     scannedRockId: "",
     showCamera: true
   };
+
   didBlurSub: any;
   didFocusSub: any;
 

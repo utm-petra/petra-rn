@@ -27,6 +27,7 @@ import {
 } from "./redux/modules/collection";
 
 import { colorTheme } from "./constants/Colors";
+import type { Theme } from "./constants/Types";
 
 const mapStateToProps = state => ({
   empty: collectionSelectors.ids(state).length === 0
@@ -34,7 +35,12 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = { hydrateCollectionFromFile };
 
-class AppWithNavigation extends React.Component {
+type Props = {
+  hydrateCollectionFromFile: Function,
+  theme: Theme
+};
+
+class AppWithNavigation extends React.Component<Props> {
   componentDidMount() {
     if (this.props.empty) {
       this.props.hydrateCollectionFromFile();
@@ -59,7 +65,7 @@ const ConnectedApp = connect(
   mapDispatchToProps
 )(withTheme(AppWithNavigation));
 
-export default class App extends React.Component {
+export default class App extends React.Component<*> {
   render() {
     return (
       <StoreProvider store={store}>

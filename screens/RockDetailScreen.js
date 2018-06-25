@@ -23,6 +23,7 @@ import { MaterialIcons } from "@expo/vector-icons";
 import { selectors as collectionSelectors } from "../redux/modules/collection";
 import Layout from "../constants/Layout";
 import { colorsForRockType } from "../constants/Colors";
+import type { Rock, Theme } from "../constants/Types";
 
 const mapStateToProps = (state, ownProps) => ({
   rock: collectionSelectors.byId(state)[
@@ -33,7 +34,9 @@ const mapStateToProps = (state, ownProps) => ({
     .includes(ownProps.navigation.state.params.rockId)
 });
 
-class RockDetailScreen extends React.Component {
+type Props = { navigation: any, rock: Rock, visited: boolean, theme: Theme };
+
+class RockDetailScreen extends React.Component<Props> {
   static navigationOptions = ({ screenProps, navigation }) => {
     return {
       headerTintColor: screenProps.theme.colors.text,

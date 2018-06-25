@@ -11,6 +11,7 @@ import {
 import { Toolbar, ToolbarBackAction, ToolbarContent } from "react-native-paper";
 
 import RockListItem from "../components/RockListItem";
+import type { Rock } from "../constants/Types";
 
 const mapStateToProps = state => ({
   ids: collectionSelectors.ids(state),
@@ -20,8 +21,15 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = { hydrateCollectionFromFile };
 
-class CollectionScreen extends React.Component {
-  static navigationOptions = ({ screenProps }) => {
+type Props = {
+  navigation: any,
+  ids: string[],
+  scannedRocks: { [id: string]: boolean },
+  byId: { [id: string]: Rock }
+};
+
+class CollectionScreen extends React.Component<Props> {
+  static navigationOptions = ({ screenProps }: any) => {
     return {
       headerTitle: <ToolbarContent title="UTM Rock Collection" />,
       headerStyle: {

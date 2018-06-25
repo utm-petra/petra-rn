@@ -1,8 +1,9 @@
 //@flow
 
 import { DefaultTheme, Colors } from "react-native-paper";
+import type { Theme } from "./Types";
 
-export const colorTheme = {
+export const colorTheme: Theme = {
   ...DefaultTheme,
   roundness: 4,
   colors: {

@@ -9,6 +9,7 @@ import { connect } from "react-redux";
 import { Chip, FAB, withTheme } from "react-native-paper";
 import { selectors as collectionSelectors } from "../redux/modules/collection";
 import { colorsForRockType } from "../constants/Colors";
+import type { Rock } from "../constants/Types";
 
 const initialRegion = {
   latitude: 43.547389,
@@ -23,7 +24,19 @@ const mapStateToProps = state => ({
   scannedRockIds: collectionSelectors.scannedRockIds(state)
 });
 
-class HomeScreen extends React.Component {
+type Props = {
+  navigation: any,
+  ids: string[],
+  byId: { [id: string]: Rock },
+  scannedRockIds: string[]
+};
+type State = {
+  region: MapView.AnimatedRegion,
+  location: MapView.Region,
+  errorMessage?: string
+};
+
+class HomeScreen extends React.Component<Props, State> {
   static navigationOptions = {
     header: null
   };

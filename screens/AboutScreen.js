@@ -7,8 +7,10 @@ import styles from "../constants/Styles";
 
 const about = require("../redux/data/rocks.json").about;
 
-export default class AboutScreen extends React.Component {
-  static navigationOptions = ({ screenProps }) => {
+type Props = { navigation: any };
+
+export default class AboutScreen extends React.Component<Props> {
+  static navigationOptions = ({ screenProps }: any) => {
     return {
       headerTitle: <ToolbarContent title="About Petra" />,
       headerStyle: {
