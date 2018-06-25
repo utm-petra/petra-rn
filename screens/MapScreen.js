@@ -152,6 +152,7 @@ class HomeScreen extends React.Component {
             justifyContent: "flex-end",
             alignItems: "center"
           }}
+          pointerEvents={"box-none"}
         >
           <FAB
             small
