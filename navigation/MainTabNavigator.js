@@ -3,6 +3,7 @@
 import React from "react";
 import { Platform } from "react-native";
 import { createStackNavigator } from "react-navigation";
+
 import { createMaterialBottomTabNavigator } from "react-navigation-material-bottom-tabs";
 
 import { colorTheme } from "../constants/Colors";
@@ -25,25 +26,14 @@ MapStack.navigationOptions = {
 };
 
 // Rock collection list
-const CollectionStack = createStackNavigator(
-  {
-    Collection: CollectionScreen,
-    RockDetail: RockDetailScreen,
-    ImageLightbox: ImageLightboxScreen
-  },
-  {
-    mode: "card",
-    navigationOptions: () => ({
-      headerTintColor: colorTheme.colors.text,
-      headerStyle: { backgroundColor: colorTheme.colors.primary }
-    })
-  }
-);
+const CollectionStack = createStackNavigator({
+  Collection: CollectionScreen
+});
 
-CollectionStack.navigationOptions = {
+CollectionStack.navigationOptions = ({ navigation }) => ({
   tabBarLabel: "Collection",
   tabBarIcon: tabBarIcon("view-list")
-};
+});
 
 // QR scanner screen
 const RockScannerStack = createStackNavigator({
@@ -63,6 +53,19 @@ const AboutStack = createStackNavigator({
 AboutStack.navigationOptions = {
   tabBarLabel: "About",
   tabBarIcon: tabBarIcon("info")
+};
+
+const tabbarVisible = navigation => {
+  const { routes } = navigation.state;
+
+  let showTabbar = true;
+  routes.forEach(route => {
+    if (["Collection", "ImageLightbox"].includes(route.routeName)) {
+      showTabbar = false;
+    }
+  });
+
+  return showTabbar;
 };
 
 export default createMaterialBottomTabNavigator(

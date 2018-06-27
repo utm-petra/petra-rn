@@ -13,7 +13,6 @@ type Props = {
 };
 
 export default class ImageLightboxScreen extends React.Component<Props> {
-  static navigationOptions = { header: null };
   componentDidMount() {
     const didSubscription = this.props.navigation.addListener("didFocus", _ =>
       Expo.ScreenOrientation.allow(Expo.ScreenOrientation.Orientation.ALL)
