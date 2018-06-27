@@ -89,7 +89,7 @@ class HomeScreen extends React.Component<Props> {
                 key={rock.id}
                 pinColor={alreadyScanned ? color : "wheat"}
                 onCalloutPress={() => {
-                  this.props.navigation.push("RockDetail", {
+                  this.props.navigation.navigate("RockDetail", {
                     rockId: rock.id
                   });
                 }}

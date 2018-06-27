@@ -99,7 +99,7 @@ class RockScannerScreen extends React.Component<Props, State> {
         scannedRockId: ""
       },
       () =>
-        this.props.navigation.push("RockDetail", {
+        this.props.navigation.navigate("RockDetail", {
           rockId: id
         })
     );

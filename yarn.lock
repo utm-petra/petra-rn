@@ -3505,6 +3505,10 @@ lodash-es@^4.17.5:
   version "4.17.10"
   resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.10.tgz#62cd7104cdf5dd87f235a837f0ede0e8e5117e05"
 
+lodash.chunk@*:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/lodash.chunk/-/lodash.chunk-4.2.0.tgz#66e5ce1f76ed27b4303d8c6512e8d1216e8106bc"
+
 lodash.map@^4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/lodash.map/-/lodash.map-4.6.0.tgz#771ec7839e3473d9c4cde28b19394c3562f4f6d3"
@@ -3525,7 +3529,7 @@ lodash.padstart@^4.1.0:
   version "4.6.1"
   resolved "https://registry.yarnpkg.com/lodash.padstart/-/lodash.padstart-4.6.1.tgz#d2e3eebff0d9d39ad50f5cbd1b52a7bce6bb611b"
 
-lodash.sortby@^4.7.0:
+lodash.sortby@*, lodash.sortby@^4.7.0:
   version "4.7.0"
   resolved "https://registry.yarnpkg.com/lodash.sortby/-/lodash.sortby-4.7.0.tgz#edd14c824e2cc9c1e0b0a1b42bb5210516a42438"
 
@@ -4479,6 +4483,36 @@ react-native-gesture-handler@1.0.4:
     invariant "^2.2.2"
     prop-types "^15.5.10"
 
+react-native-gesture-responder@0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/react-native-gesture-responder/-/react-native-gesture-responder-0.1.1.tgz#802552d8eb7153c0d81a396e98f4b80b404b6798"
+  dependencies:
+    react-timer-mixin "^0.13.3"
+
+react-native-image-pan-zoom@^2.1.6:
+  version "2.1.6"
+  resolved "https://registry.yarnpkg.com/react-native-image-pan-zoom/-/react-native-image-pan-zoom-2.1.6.tgz#9f5832055695813e95aa87f08a88996927f84ad0"
+
+react-native-image-progress@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/react-native-image-progress/-/react-native-image-progress-0.6.0.tgz#14614add12beaa247a052e5a52e6a9fee0fb8c67"
+
+react-native-image-viewer@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/react-native-image-viewer/-/react-native-image-viewer-0.0.3.tgz#312266f173ae4362c2da318094163358d8862037"
+  dependencies:
+    react-native-image-progress "^0.6.0"
+
+react-native-image-zoom-viewer@^2.2.8:
+  version "2.2.8"
+  resolved "https://registry.yarnpkg.com/react-native-image-zoom-viewer/-/react-native-image-zoom-viewer-2.2.8.tgz#da4bf37c15fd677c8bb1673a493ffd4561f312d4"
+  dependencies:
+    react-native-image-pan-zoom "^2.1.6"
+
+react-native-image-zoom@^0.32.0:
+  version "0.32.0"
+  resolved "https://registry.yarnpkg.com/react-native-image-zoom/-/react-native-image-zoom-0.32.0.tgz#633f0b796d6303e8a7ef99133733c53dd5a7a81c"
+
 react-native-maps@0.21.0:
   version "0.21.0"
   resolved "https://registry.yarnpkg.com/react-native-maps/-/react-native-maps-0.21.0.tgz#005f58e93d7623ad59667e8002101970ddf235c2"
@@ -4532,6 +4566,10 @@ react-native-safe-module@^1.1.0:
   dependencies:
     dedent "^0.6.0"
 
+react-native-scroller@0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/react-native-scroller/-/react-native-scroller-0.0.6.tgz#dea8c89bd1ca2d2445fbb6b3a90960df6c1767ff"
+
 react-native-snap-carousel@^3.7.2:
   version "3.7.2"
   resolved "https://registry.yarnpkg.com/react-native-snap-carousel/-/react-native-snap-carousel-3.7.2.tgz#da94f7b16076ec055c0980d169d1f85eef852d03"
@@ -4566,6 +4604,14 @@ react-native-vector-icons@4.5.0:
     lodash "^4.0.0"
     prop-types "^15.5.10"
     yargs "^8.0.2"
+
+react-native-view-transformer-next@^0.0.30:
+  version "0.0.30"
+  resolved "https://registry.yarnpkg.com/react-native-view-transformer-next/-/react-native-view-transformer-next-0.0.30.tgz#62f5bf8202478df6ef7d6068a41564a585cacff4"
+  dependencies:
+    prop-types "^15.5.10"
+    react-native-gesture-responder "0.1.1"
+    react-native-scroller "0.0.6"
 
 "react-native@https://github.com/expo/react-native/archive/sdk-28.0.0.tar.gz":
   version "0.55.4"
@@ -4643,6 +4689,14 @@ react-navigation-drawer@0.3.0:
   dependencies:
     react-native-drawer-layout-polyfill "^1.3.2"
 
+react-navigation-fluid-transitions@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/react-navigation-fluid-transitions/-/react-navigation-fluid-transitions-0.2.2.tgz#12f13bf4ad8963ca3d11c4833db6f43b595e249b"
+  dependencies:
+    lodash.chunk "*"
+    lodash.sortby "*"
+    prop-types "^15.6.0"
+
 react-navigation-material-bottom-tabs@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/react-navigation-material-bottom-tabs/-/react-navigation-material-bottom-tabs-0.3.0.tgz#7fae682a41c1c290f2584fe50879e36b41da5394"
@@ -4714,7 +4768,7 @@ react-test-renderer@^16.3.1:
     prop-types "^15.6.0"
     react-is "^16.4.1"
 
-react-timer-mixin@^0.13.2:
+react-timer-mixin@^0.13.2, react-timer-mixin@^0.13.3:
   version "0.13.3"
   resolved "https://registry.yarnpkg.com/react-timer-mixin/-/react-timer-mixin-0.13.3.tgz#0da8b9f807ec07dc3e854d082c737c65605b3d22"
 

@@ -1,3 +1,5 @@
+// @flow
+
 import React from "react";
 import { Platform } from "react-native";
 import { createStackNavigator } from "react-navigation";
@@ -9,6 +11,8 @@ import MapScreen from "../screens/MapScreen";
 import CollectionScreen from "../screens/CollectionScreen";
 import AboutScreen from "../screens/AboutScreen";
 import RockScannerScreen from "../screens/RockScannerScreen";
+import RockDetailScreen from "../screens/RockDetailScreen";
+import ImageLightboxScreen from "../screens/ImageLightboxScreen";
 
 // Google maps
 const MapStack = createStackNavigator({
@@ -21,9 +25,20 @@ MapStack.navigationOptions = {
 };
 
 // Rock collection list
-const CollectionStack = createStackNavigator({
-  Collection: CollectionScreen
-});
+const CollectionStack = createStackNavigator(
+  {
+    Collection: CollectionScreen,
+    RockDetail: RockDetailScreen,
+    ImageLightbox: ImageLightboxScreen
+  },
+  {
+    mode: "card",
+    navigationOptions: () => ({
+      headerTintColor: colorTheme.colors.text,
+      headerStyle: { backgroundColor: colorTheme.colors.primary }
+    })
+  }
+);
 
 CollectionStack.navigationOptions = {
   tabBarLabel: "Collection",

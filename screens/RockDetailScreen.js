@@ -19,11 +19,13 @@ import {
 import Carousel from "react-native-snap-carousel";
 import { connect } from "react-redux";
 import { MaterialIcons } from "@expo/vector-icons";
+import { Transition } from "react-navigation-fluid-transitions";
 
 import { selectors as getCollection } from "../redux/modules/collection";
 import Layout from "../constants/Layout";
 import { colorsForRockType } from "../constants/Colors";
 import type { Rock, Theme } from "../constants/Types";
+import Images from "../assets/images";
 
 const mapStateToProps = (state, ownProps) => ({
   rock: getCollection.byId(state)[ownProps.navigation.state.params.rockId],
@@ -35,30 +37,22 @@ const mapStateToProps = (state, ownProps) => ({
 type Props = { navigation: any, rock: Rock, visited: boolean, theme: Theme };
 
 class RockDetailScreen extends React.Component<Props> {
-  static navigationOptions = ({ screenProps, navigation }) => {
-    return {
-      headerTintColor: screenProps.theme.colors.text,
-      headerStyle: {
-        backgroundColor: screenProps.theme.colors.primary
-      }
-    };
-  };
-
   _carousel: Carousel;
 
-  _renderItem({ item, index }) {
-    return (
-      <View style={{ paddingHorizontal: 2, paddingVertical: 8 }}>
-        <Card elevation={4}>
-          <CardCover source={require("../assets/images/amphibolite1.jpg")} />
-        </Card>
-      </View>
-    );
-  }
+  _renderItem = ({ item, index }) => (
+    <View style={{ paddingHorizontal: 2, paddingVertical: 8 }}>
+      <Card elevation={4} onPress={() => this._zoomImage(Images[item])}>
+        <CardCover source={Images[item]} />
+      </Card>
+    </View>
+  );
+
+  _zoomImage = imageSource =>
+    this.props.navigation.navigate("ImageLightbox", { imageSource });
 
   render() {
     const { rock } = this.props;
-    const data = ["test", "test", "test", ...rock.pics];
+    const data = rock.pics;
     const w = Layout.window.width;
     const h = Layout.window.height * 0.3;
     return (

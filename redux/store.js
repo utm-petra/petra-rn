@@ -18,7 +18,7 @@ export type Store = ReduxStore<State, Action>;
 
 declare var __DEV__: boolean;
 const store: Store = __DEV__
-  ? createStore(reducers, {}, applyMiddleware(ReduxThunk, logger))
+  ? createStore(reducers, {}, applyMiddleware(ReduxThunk /*, logger*/))
   : createStore(reducers, {}, applyMiddleware(ReduxThunk));
 
 export const persistor = persistStore(store);

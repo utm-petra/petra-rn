@@ -19,7 +19,7 @@
         "This igneous rock is composed of equal sized crystals. The cleavage in the biotite is particularly visible, identifiable as the flakiness in the black mineral.",
       "interpretation":
         "This plutonic rock formed through the slow cooling of a magma chamber, providing the minerals sufficient time to form large crystals. The composition is \"felsic,\" meaning it is rich in silica.These minerals must have formed during the latter stages of cooling of magma as the rock is rich in silicic minerals that crystallize later as they require a lower temperature for crystallizing out of the magma.",
-      "pics": [""]
+      "pics": ["granite1n1", "granite1n2", "granite1n3"]
     },
     {
       "id": "tonalite1",
@@ -35,7 +35,7 @@
         "This igneous rock is composed of equal sized crystals of the flaky, black mineral biotite and the white mineral plagioclase.  The rock is deeply pitted by weathering, and the brown spots indicate oxidation (rusting) of iron minerals).",
       "interpretation":
         "This igneous rock is a Trondhjemite, which is a light-coloured version (leucocratic - ‘leuco’ - light coloured)  of a Tonalite. The rock is igneous and is formed through the slow cooling of a magma chamber, which allows sufficient time for the crystallization of large crystals visible to the unaided eye. The brown spots on the rocks' surface are evidence of \"oxidation,\" in which oxygen in the atmosphere and iron-rich minerals such as biotite react, essentially causing the rock to rust. This, along with the deep pitting, suggest that this boulder has been weathering on the surface of the Earth for a long period of time.",
-      "pics": [""]
+      "pics": ["tonalite1n1", "tonalite2n1", "tonalite3n1"]
     },
     {
       "id": "granitePegmatite1",
@@ -51,7 +51,11 @@
         "This igneous rock is composed of equal sized crystals. The cleavage in the biotite is particularly visible, identifiable as the flakiness in the black mineral. The extremely large crystals (up to several centimetres long) mean that this rock is a \"pegmatite\".",
       "interpretation":
         "This plutonic, igneous rock is known as pegmatite, and is characterized by extremely large crystals. Pegmatites are formed during the last stages of cooling of magma, when the few drops of magma that remain form large crystals that are usually silicic (rich in silica). Pegmatites are of economic importance as they typically contain several rare earth elements (REE) such as Cesium. Cesium is used in atomic clocks, photoelectric cells etc. Gemstones such as topaz, tourmaline, and aquamarine are also often found in pegmatite and are used to make jewelry.",
-      "pics": [""]
+      "pics": [
+        "granitepegmatite1n1",
+        "granitepegmatite2n1",
+        "granitepegmatite3n1"
+      ]
     },
     {
       "id": "syenite1",
@@ -67,7 +71,7 @@
         "This igneous rock has a massive texture (no layers). It is composed of crystals of similar sizes, in the range of 1-3mm.",
       "interpretation":
         "This plutonic, igneous rock cooled slowly from a magma chamber, allowing for the formation of visible crystals of biotite and quartz.",
-      "pics": [""]
+      "pics": ["syenite1", "syenite2", "syenite3"]
     },
     {
       "id": "tonalite2",
@@ -83,7 +87,7 @@
         "This igneous rock has a massive texture (no layers) and large crystals. It also contains mafic (dark, with iron-rich minerals) xenoliths, with the largest one on the side of the rock facing the Kaneff Centre. There are striations carved into the top side of the boulder.",
       "interpretation":
         "This igneous rock is a tonalite which are formed by the crystallization of felsic magma within a magma chamber. They are phaneritic, implying that the crystals formed are visible to the unaided eye. The rock also contains xenoliths (small, embedded fragments) of a magic composition (suggestive of its xenolith nature as it does not conform with the composition of the rest of the rock; magic = rich in iron and magnesium, poor in silica). The word \"xenolith\" is made of \"xeno\" meaning foreign and \"lith\" meaning rock.  Xenoliths are ripped off from the wall when the magma moves up through the Earth's crust, and therefore tell us about the make-up of the Earth's deep crust and even mantle. The striations indicate that this rock later became a \"glacial erratic,\" or a rock transported (and scraped up) at the base of a glacier during the last ice age.",
-      "pics": [""]
+      "pics": ["tonalite1n2", "tonalite2n2", "tonalite3n2"]
     },
     {
       "id": "granitePegmatite2",
@@ -99,7 +103,11 @@
         "This igneous rock is all of the same composition, but part of the rock is coarse grained and part is extremely coarse grained (pegmatite), with the two parts separated by a \"contact\".",
       "interpretation":
         "The large crystals of feldspar and quartz indicate that the rock  cooled slowly from a magma chamber deep under the surface of the Earth. The magma was relatively felsic (rich in silica), allowing for the crystallization of quartz and feldspar. In the late stages of cooling, a thin sheet of magma cut across the rock, cooling to form a pegmatite \"dyke.\" It cooled slowly, allowing the exceptionally large crystals to grow. Pegmatites are formed during the last stages of cooling of magma, when the few drops of magma that remain form large crystals that are usually silicic (rich in silica). Pegmatites are of economic importance as they typically contain several rare earth elements (REE) such as Cesium. Cesium is used in atomic clocks, photoelectric cells etc.",
-      "pics": [""]
+      "pics": [
+        "granitepegmatite1n2",
+        "granitepegmatite2n2",
+        "granitepegmatite3n2"
+      ]
     },
     {
       "id": "granite2",
@@ -115,7 +123,7 @@
         "This igneous rock has a massive texture (no layers) and is composed of equal sized crystals. The cleavage in the biotite is particularly visible, identifiable as the flakiness in the black mineral.",
       "interpretation":
         "This plutonic, igneous rock formed through the slow cooling of a magma chamber, allowing for the growth of large crystals. The abundance of feldspar and biotite mean this rock is \"felsic,\" or high in silica. Because silicic minerals have a lower cooling temperature, this rock likely crystallized during the later stages of cooling of the magma.",
-      "pics": [""]
+      "pics": ["granite2n1", "granite2n2", "granite2n3"]
     },
     {
       "id": "tonalite3",
@@ -132,7 +140,7 @@
         "This igneous rock has a massive texture (no layers) and large crystals. There are striations carved into the top side of the boulder, oriented in an east-west direction.",
       "interpretation":
         "This is a Trondhjemite, which is a light-coloured version (leucocratic - ‘leuco’ - light coloured)  of a Tonalite. The rock is igneous and is formed through the slow cooling of a magma chamber, which allows sufficient time for the crystallization of large crystals visible to the unaided eye. These rocks are dominantly found on Archean terranes - terranes are crustal material that are formed or broken off one tectonic plate and deposited on another plate. Glacial striations are observed in this rock. The striations carved into the boulder occurred later, when it was embedded in an ice sheet - the rock was scraped along the bedrock at the bottom of the glacier during the last ice age. Boulders such as this, which have been transported long distances by glaciers, are called \"glacial erratics.\"",
-      "pics": [""]
+      "pics": ["tonalite1n3", "tonalite2n3", "tonalite3n3"]
     },
     {
       "id": "gneiss1",
@@ -148,7 +156,7 @@
         "This metamorphic rock is \"foliated\" throughout, meaning it has layers. Because the rock is a gneiss, we call the layers \"gneissic foliation.\" Individual minerals are also elongated and lined up, meaning this rock has a \"lineation\" as well.",
       "interpretation":
         "Metamorphic rocks like gneiss form at great depths in the Earth's crust, where temperatures and pressures are high. The gneissic foliation indicates that the rock was being flattened, but the lineation indicates that it was being sheared or stretched at the same time.",
-      "pics": [""]
+      "pics": ["gneiss1", "gneiss2", "gneiss3"]
     },
     {
       "id": "migmatiticGneiss1",
@@ -164,7 +172,7 @@
         "This metamorphic rock is lineated (crystals are elongated and lined up) and foliated (has layers). The foliation is particularly clear, marked by alternating mafic (dark coloured) and felsic (light coloured) layers.",
       "interpretation":
         "The layering in the rock, known as gneissic foliation, originated as the rock was squeezed deep under the earth, but the lineation also indicates the rock was being sheared (or smeared out) at the same time. This rock was metamorphosed at temperatures high enough that it just started to melt, forming the early stages of a \"migmatite,\" or a partially molten metamorphic rock. Migmatites straddle the boundary between igneous and metamorphic rocks.",
-      "pics": [""]
+      "pics": ["migmatiticgneiss1", "migmatiticgneiss2", "migmatiticgneiss3"]
     },
     {
       "id": "marble1",
@@ -180,7 +188,7 @@
         "This metamorphic rock has a massive texture. It has been extensively recrystallized during metamorphism, allowing the really large crystals of tremolite to grow. Tremolite crystals are prismatic and have a milky white colour in this rock. Tremolite is rich in magnesium.",
       "interpretation":
         "Tremolite is magnesium rich, suggesting that fluids circulating through the rock were also rich in magnesium, and therefore the protolith (the rock before it was metamorphosed) was likely dolomite, not limestone, as dolomite is relatively rich in magnesium too. Tremolite is far less common that its sister mineral, actinolite; the two form a solid-solution series, meaning one transitions smoothly into the other as the composition of the mineral moves from more magnesium-rich to more iron-rich.",
-      "pics": [""]
+      "pics": ["marble1", "marble2", "marble3"]
     },
     {
       "id": "migmatiticGneiss2",
@@ -196,7 +204,7 @@
         "This metamorphic rock has strong \"gneissic foliation,\" or layers, which are folded to make both asymmetrical and symmetrical folds ranging from tight (angles less than 60 degrees) to open (angles between 60 and 120 degrees). The layers sometimes stay the same thickness around the folds (parallel folds), but sometimes the limbs thin and the hinges thicken (similar folds). A white quartz vein runs through the rock. \"Chilled margins\" are identified by the smaller crystal size along the edges and the large crystals along the middle of the vein.",
       "interpretation":
         "The alternating light and dark bands formed during metamorphism of this rock at high temperatures and pressures. The chilled margin along the quartz vein indicates that it intruded later, when the rock was cooler - the edges of the vein in contact with the cool surrounding rock cooled quickly, forming small quartz crystals while the center took longer to cool, allowing larger quartz crystals to grow. The folding in the rock indicates shearing during metamorphism.",
-      "pics": [""]
+      "pics": ["migmatiticgneiss1", "migmatiticgneiss2", "migmatiticgneiss3"]
     },
     {
       "id": "schist1",
@@ -212,7 +220,7 @@
         "This metamorphic rock is strongly foliated (has layers). Feldspar veins with \"chilled margins\" (finger grain-size along the edges of the veins, coarser grains in the center) are found in the rock.",
       "interpretation":
         "This is an intermediate grade metamorphic rock, meaning it was subjected to enough heat and pressure to cause large, new minerals to form (the micas in particular), but it was not metamorphosed enough to convert it to gneiss. Within the veins, the fine crystals along the outside of the veins cooled quickly forming small crystals and the centers cooled more slowly, allowing larger crystals to grow. These \"chilled margins\" mean the veins were intruded after the rock had already cooled.",
-      "pics": [""]
+      "pics": ["schist1n1", "schist2n1", "schist3n1"]
     },
     {
       "id": "mylonite1",
@@ -228,7 +236,7 @@
         "This metamorphic rock has a very strong foliation (layers) and a lineation (lines on the foliation planes) as well. Pink feldspar crystals are present in this rock that indicate the direction of shear experienced. These are known as \"augen,\" for their similarity in appearance to eyes (augen means eyes in German).",
       "interpretation":
         "Mylonite is formed through \"dynamic\" metamorphism involving shearing between fault blocks, producing a \"shear zone.\" The feldspar augen indicate the direction of shearing - the tops of the minerals are dragged in one direction, and the bottom in the other, giving them a sigmoidal shape. In the present orientation of the rock, the augen indicate the top of the rock was moved towards Kaneff and the bottom was moved towards the bus stop. Augen are usually dominant in the mineral plagioclase.",
-      "pics": [""]
+      "pics": ["mylonite1", "mylonite2", "mylonite3"]
     },
     {
       "id": "gneiss2",
@@ -245,7 +253,7 @@
         "This metamorphic rock is \"foliated,\" meaning it has layers. The foliation is however not as well-defined as it is in other rocks around campus.",
       "interpretation":
         "This rock formed under high temperatures and pressures, likely near the base of a mountain range. The foliation results from minerals growing under great pressure. The presence of garnet (the red mineral) indicates that the protolith (the rock before it was metamorphosed) for this rock was likely a mudstone, as mudstone contains all of the diverse elements necessary for making garnet during metamorphism. Garnet is the birthstone for the month of January.",
-      "pics": [""]
+      "pics": ["gneiss1n2", "gneiss2n2", "gneiss3n2"]
     },
     {
       "id": "schist2",
@@ -261,7 +269,7 @@
         "This metamorphic rock is foliated, meaning it has layers. The foliation is defined by to the parallel arrangement of biotite mica -  the black, flaky mineral.",
       "interpretation":
         "This rock formed relatively deep in the Earth's crust, where temperatures and pressures were high. The original rock would have been a mudstone - during metamorphism it transformed from mudstone to slate to phyllite and eventually to schist. If metamorphism continued this rock would become a gneiss. The foliation indicates the rock was being squeezed during its formation, likely by the rocks above it in the Earth's crust, or by compression along a plate boundary.",
-      "pics": [""]
+      "pics": ["schist1n2", "schist2n2", "schist3n2"]
     },
     {
       "id": "schist3",
@@ -277,7 +285,7 @@
         "This metamorphic rock is very well foliated, meaning it has strong layering formed by micas (the flaky, black mineral). The rock is cut by small veins of feldspar.",
       "interpretation":
         "The strong layering in this intermediate grade metamorphic rock results from the growth of minerals, particularly biotite (the black, flaky mineral) in alignment with the direction the rock was being squeezed during metamorphism. The foliation (layering) is cut by small dikes containing feldspar, which would have formed from the circulation of feldspar-rich fluids in the rock. There are no chilled margins, indicating the veins formed when the rock was still warm from metamorphism.",
-      "pics": [""]
+      "pics": ["schist1n3", "schist2n3", "schist3n3"]
     },
     {
       "id": "migmatiticGneiss3",
@@ -293,7 +301,7 @@
         "This metamorphic rock has strong gneissic foliation (layers), but the layers have been deformed into tight, asymmetrical folds.",
       "interpretation":
         "The rock has been metamorphosed at high pressures and temperatures. The folds indicate that the rock was squeezed perpendicular to its layering, or it was sheared during its formation. The protolith for this rock could have possibly been a mudstone as it contains the ingredients necessary for crystallization of garnet under the right temperature and pressure conditions. Garnet is a common gemstone found on rings and other jewelry.",
-      "pics": [""]
+      "pics": ["migmatiticgneiss1", "migmatiticgneiss2", "migmatiticgneiss3"]
     },
     {
       "id": "amphibolite1",
@@ -309,7 +317,7 @@
         "This metamorphic rock has a very weak foliation (layering) formed by alignment of hornblende crystals. The rock also has small quartz veins running through it, which formed after metamorphism because they cut across the foliation.",
       "interpretation":
         "This metamorphic rock is derived from a mafic source, or \"protolith,\" like basalt. The foliation (or layers) indicate the minerals grew under pressure during metamorphism. The quartz veins would have formed as fluids rich in silica circulated through the rock, then crystallized in cracks. Gold is sometimes founds in veins like these, although not in this rock, unfortunately!",
-      "pics": [""]
+      "pics": ["amphibolite1", "amphibolite2", "amphibolite3"]
     },
     {
       "id": "migmatiticAmphibolite1",
@@ -325,7 +333,11 @@
         "This rock is a migmatite, which falls on the boundary between igneous and metamorphic. The upper face of the rock best shows the migmatitic texture. Migmatites are characterized by partial melting due to high temperatures.",
       "interpretation":
         "Migmatites form at the highest temperatures and pressures of any metamorphic rocks - the light-colored bands are  produced because the rock starts to melt, and turn back into a magma. Migmatization most often happens at the roots of mountain ranges.",
-      "pics": [""]
+      "pics": [
+        "migmatiticamphibolite1",
+        "migmatiticamphibolite2",
+        "migmatiticamphibolite3"
+      ]
     },
     {
       "id": "limestone1",
@@ -341,7 +353,7 @@
         "This sedimentary limestone is massive (meaning there are no visible layers). The rock contains dominantly crinoid fossils. They consist for a base (or holdfast), a long stem made of rings, and fronds at the end for capturing food. The rings disaggregate when the organisms dies - this is what you see in the rock. The rock also has a pitted texture.",
       "interpretation":
         "The rock was formed when Canada was located along the equator during the Ordovician-Silurian (500 to 410 million years ago). The warm and shallow waters that covered much of North America were filled with organisms such as crinoids and bryozoans, made of calcite. When they died and accumulated along with microfossils, they formed limestone, also known as biomicrite. Fossils of crinoids are abundant in this rock. The broken nature of the fossils suggest that these rocks were probably on the flanks of a reef system and were broken during storms and/or due to the high energy of the waves. Therefore, the type of organisms and its taphonomic condition (whether the organism is broken up and how well the organism is preserved) can help geologists infer on the type and region of a reef system the limestone is associated with.",
-      "pics": [""]
+      "pics": ["limestone1", "limestone2", "limestone3"]
     },
     {
       "id": "limestone2",
@@ -357,7 +369,7 @@
         "This sedimentary limestone is massive (meaning there are no visible layers). The rock contains dominantly crinoid fossils. They consist for a base (or holdfast), a long stem made of rings, and fronds at the end for capturing food. The rings disaggregate when the organisms dies - this is what you see in the rock. The rock also has a pitted texture.",
       "interpretation":
         "The rock was formed when Canada was located along the equator during the Ordovician-Silurian (500 to 410 million years ago). The warm and shallow waters that covered much of North America were filled with organisms such as crinoids and bryozoans, made of calcite. When they died and accumulated along with microfossils, they formed limestone, also known as biomicrite. Fossils of crinoids are abundant in this rock. Crinoids are related to starfish and sea urchins as they belong to the same phylum - Echinodermata. They have an exoskeleton made of calcite (CaCO3) but it may sometimes also be aragonite (another mineral with the same composition as calcite, more durable under rough ocean conditions). Crinoids exist till this very day in both shallow and deep ocean settings (up to 9000 m depth).",
-      "pics": [""]
+      "pics": ["limestone1", "limestone2", "limestone3"]
     },
     {
       "id": "limestone3",
@@ -373,7 +385,7 @@
         "This sedimentary limestone is massive (meaning there are no visible layers). The rock contains dominantly crinoid fossils. They consist for a base (or holdfast), a long stem made of rings, and fronds at the end for capturing food. The rings disaggregate when the organisms dies - this is what you see in the rock. The rock also has a pitted texture.",
       "interpretation":
         "The rock was formed when Canada was located along the equator during the Ordovician-Silurian (500 to 410 million years ago). The warm and shallow waters that covered much of North America were filled with organisms such as crinoids and bryozoans, made of calcite. When they died and accumulated along with microfossils, they formed limestone, , also known as biomicrite. Fossils of crinoids are abundant in this rock. The limestone has a very pitted texture to it. As an observer, the pitted texture of the rock should shed light on the declining health of our coral reefs due to global warming. Global warming causes carbon dioxide to enter the oceans, making it acidic, which is capable of destroying reef systems, which are made of the same mineral (calcite) as this limestone rock.",
-      "pics": [""]
+      "pics": ["limestone1", "limestone2", "limestone3"]
     },
     {
       "id": "limestone4",
@@ -389,7 +401,7 @@
         "This sedimentary limestone is massive (meaning there are no visible layers). The rock contains dominantly crinoid fossils. They consist for a base (or holdfast), a long stem made of rings, and fronds at the end for capturing food. The rings disaggregate when the organisms dies - this is what you see in the rock. The rock also has a pitted texture.",
       "interpretation":
         "The rock was formed when Canada was located along the equator during the Ordovician-Silurian (500 to 410 million years ago). The warm and shallow waters that covered much of North America were filled with organisms such as crinoids and bryozoans, made of calcite. When they died and accumulated along with microfossils, they formed limestone, , also known as biomicrite. Fossils of crinoids are abundant in this rock. The limestone has a very pitted texture to it. As an observer, the pitted texture of the rock should shed light on the declining health of our coral reefs due to global warming. Global warming causes carbon dioxide to enter the oceans, making it acidic, which is capable of destroying reef systems, which are made of the same mineral (calcite) as this limestone rock.",
-      "pics": [""]
+      "pics": ["limestone1", "limestone2", "limestone3"]
     },
     {
       "id": "limestone5",
@@ -405,7 +417,7 @@
         "This sedimentary limestone is massive (meaning there are no visible layers). The rock contains dominantly crinoid fossils. They consist for a base (or holdfast), a long stem made of rings, and fronds at the end for capturing food. The rings disaggregate when the organisms dies - this is what you see in the rock. The rock also has a pitted texture.",
       "interpretation":
         "The rock was formed when Canada was located along the equator during the Ordovician-Silurian (500 to 410 million years ago). The warm and shallow waters that covered much of North America were filled with organisms such as crinoids and bryozoans, made of calcite. When they died and accumulated along with microfossils, they formed limestone,, also known as biomicrite. Fossils of crinoids are abundant in this rock. These fossils are made of calcite or aragonite (a more durable biogenic version of calcite). This depends on the abundance of the mineral in the oceans when the organism is formed. Studying fossils have allowed geologists to confirm that there has been switches between aragonite-rich and calcite-rich seas in the past. Aragonite-rich seas favour an aragonite exoskeleton for the organisms while calcite-rich seas favour a calcite exoskeleton. Although it is generally considered aragonite and calcite are both calcium carbonates, aragonite specifically has a higher Magnesium(Mg):Calcium(Ca) ratio while calcite has a lower Mg:Ca ratio.",
-      "pics": [""]
+      "pics": ["limestone1", "limestone2", "limestone3"]
     },
     {
       "id": "limestone6",
@@ -421,7 +433,7 @@
         "This sedimentary limestone is massive (meaning there are no visible layers). The rock contains dominantly crinoid fossils. They consist for a base (or holdfast), a long stem made of rings, and fronds at the end for capturing food. The rings disaggregate when the organisms dies - this is what you see in the rock. The rock also has a pitted texture.",
       "interpretation":
         "The rock was formed when Canada was located along the equator during the Ordovician-Silurian (500 to 410 million years ago). The warm and shallow waters that covered much of North America were filled with organisms such as crinoids and bryozoans, made of calcite. When they died and accumulated along with microfossils, they formed limestone, also known as biomicrite. Fossils of crinoids are abundant in this rock. These fossils are made of calcite or aragonite (a more durable biogenic version of calcite). This depends on the abundance of the mineral in the oceans when the organism is formed. Studying fossils have allowed geologists to confirm that there has been switches between aragonite-rich and calcite-rich seas in the past. Aragonite-rich seas favour an aragonite exoskeleton for the organisms while calcite-rich seas favour a calcite exoskeleton. Although it is generally considered aragonite and calcite are both calcium carbonates, aragonite specifically has a higher Magnesium(Mg):Calcium(Ca) ratio while calcite has a lower Mg:Ca ratio.",
-      "pics": [""]
+      "pics": ["limestone1", "limestone2", "limestone3"]
     },
     {
       "id": "sandstone",
@@ -437,7 +449,7 @@
         "This sedimentary sandstone is composed of sand-sized grains of quartz. Although it is difficult to discern beds in this sedimentary rock, cross-beds (ripples in cross-section) are visible on the side of the rock facing the CCT building.",
       "interpretation":
         "This sandstone was likely formed by running water, which created the ripples and cross-bedding. A possible depositional environment could have been a river or a beach.",
-      "pics": [""]
+      "pics": ["sandstone1", "sandstone2", "sandstone3"]
     },
     {
       "id": "talusBreccia1",
@@ -453,7 +465,7 @@
         "This sedimentary rock is called a breccia because it is composed of angular clasts. In this case, the breccia is clast-supported, meaning that the clasts touch each other, and are filled in with mud. The clasts are composed of granite (found on the side of the rock facing Mississauga Road) and mudstone (found on the side of the rock facing the parking lot).",
       "interpretation":
         "Before it was lithified (turned in to rock), this rock consisted of talus, which is the term for rock debris that accumulates at the bottom of a slope due to gravity. Talus clasts are angular and can be made of different compositions, consistent with the different types of unsorted (jumbled), angular clasts found in this rock. The talus pile was later covered by mud, then buried deeply enough to \"lithify\" it, turning it into solid rock.",
-      "pics": [""]
+      "pics": ["talusbreccia1", "talusbreccia2", "talusbreccia3"]
     },
     {
       "id": "limestone7",
@@ -469,7 +481,7 @@
         "This sedimentary limestone has a massive texture and with no visible bedding. This rock is composed of fossils too small to be seen without the aid of a microscope, and therefore it is called a \"micrite\".",
       "interpretation":
         "This rock formed through the slow accumulation of tiny organisms with calcite shells in a lagoon setting. The massive texture (lack of bedding) could be because of \"bioturbation,\" with organisms burrowing through the original layers looking for food, destroying the layers in the process.",
-      "pics": [""]
+      "pics": ["limestone1", "limestone2", "limestone3"]
     },
     {
       "id": "limestone8",
@@ -485,7 +497,7 @@
         "This sedimentary limestone is massive (meaning there are no visible layers). The rock contains dominantly crinoid fossils. They consist for a base (or holdfast), a long stem made of rings, and fronds at the end for capturing food. The rings disaggregate when the organisms dies - this is what you see in the rock.",
       "interpretation":
         "The rock was formed when Canada was located along the equator during the Ordovician-Silurian (500 to 410 million years ago). The warm and shallow waters that covered much of North America were filled with organisms such as crinoids and bryozoans, made of calcite. When they died and accumulated along with microfossils, they formed limestone, also known as biomicrite. Fossils of crinoids are abundant in this rock. The broken nature of the fossils suggest that these rocks were probably on the flanks of a reef system and were broken during storms and/or due to the high energy of the waves. Therefore, the type of organisms and its taphonomic condition (whether the organism is broken up and how well the organism is preserved) can help geologists infer on the type and region of a reef system the limestone is associated with.",
-      "pics": [""]
+      "pics": ["limestone1", "limestone2", "limestone3"]
     },
     {
       "id": "solutionBreccia1",
@@ -501,7 +513,7 @@
         "This sedimentary rock is a breccia, composed of angular clasts of limestone, with quartz filling in between.",
       "interpretation":
         "This rock is known as a solution breccia. These typically form in sink holes, or in caves that collapse. The debris from this collapse is later cemented together when fluids rich in calcite or silica (silica, in this case due to the crystallized quartz), circulate through the debris, precipitate, and cement the angular blocks together.",
-      "pics": [""]
+      "pics": ["solutionbreccia1", "solutionbreccia2", "solutionbreccia3"]
     }
   ]
 }
