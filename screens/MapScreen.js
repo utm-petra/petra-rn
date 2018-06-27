@@ -49,23 +49,28 @@ class HomeScreen extends React.Component<Props> {
         latitudeDelta: 0.005,
         longitudeDelta: 0.005
       },
-      2000
+      1000
     );
   };
 
-  _animateToInitialRegion = () =>
-    this._map.animateToRegion(initialRegion, 2000);
+  _animateToInitialRegion = () => {
+    this._map.fitToElements(true);
+  };
 
   render() {
     const { rocks } = this.props;
 
     return (
-      <View style={{ flex: 1 }}>
+      <View style={styles.container}>
         <MapView
           ref={r => (this._map = r)}
-          style={{ flex: 1 }}
+          style={styles.map}
           initialRegion={initialRegion}
           showsMyLocationButton={false}
+          mapType={Platform.select({
+            ios: "standard",
+            android: "terrain"
+          })}
           showsUserLocation
         >
           {rocks.map((rock, i) => {
@@ -81,26 +86,14 @@ class HomeScreen extends React.Component<Props> {
                   longitude: rock.lon
                 }}
                 title={rock.name}
-                description={rock.mineralComposition}
                 key={rock.id}
-                pinColor={alreadyScanned ? color : "linen"}
-                zIndex={i}
-              >
-                <MapView.Callout
-                  onPress={() => {
-                    this.props.navigation.push("RockDetail", {
-                      rockId: rock.id
-                    });
-                  }}
-                  tooltip
-                >
-                  <FAB
-                    icon="navigate-next"
-                    label={rock.name}
-                    style={{ backgroundColor: "white" }}
-                  />
-                </MapView.Callout>
-              </MapView.Marker>
+                pinColor={alreadyScanned ? color : "wheat"}
+                onCalloutPress={() => {
+                  this.props.navigation.push("RockDetail", {
+                    rockId: rock.id
+                  });
+                }}
+              />
             );
           })}
         </MapView>

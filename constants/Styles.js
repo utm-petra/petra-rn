@@ -8,13 +8,7 @@ const styleObj = {
   list: {
     flex: 1
   },
-  mapCluster: {
-    backgroundColor: "#fff",
-    width: 48,
-    height: 48,
-    borderRadius: 48
-  },
-  mapClusterText: {}
+  map: { flex: 1 }
 };
 
 export default StyleSheet.create(styleObj);
