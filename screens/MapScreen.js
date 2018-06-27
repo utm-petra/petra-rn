@@ -110,18 +110,12 @@ class HomeScreen extends React.Component<Props> {
           pointerEvents={"box-none"}
         >
           <FAB
-            small
             icon="my-location"
             onPress={this._animateToCurrentLocation}
-            small
             style={{ marginBottom: 12 }}
-            color="white"
+            small
           />
-          <FAB
-            icon="location-on"
-            onPress={this._animateToInitialRegion}
-            color="white"
-          />
+          <FAB icon="location-on" onPress={this._animateToInitialRegion} />
         </View>
       </View>
     );
