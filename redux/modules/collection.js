@@ -25,12 +25,14 @@ export function visitRockId(id: string): ThunkAction {
 type State = {
   +ids: string[],
   +byId: { [id: string]: Rock },
+  +list: Rock[],
   +scannedRocks: { [id: string]: boolean }
 };
 
 const INITIAL_STATE: State = {
   ids: rockIds,
-  byId: rocks,
+  byId: rocksById,
+  list: rocks,
   scannedRocks: {}
 };
 

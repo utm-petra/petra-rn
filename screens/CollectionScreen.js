@@ -38,9 +38,9 @@ class CollectionScreen extends React.Component<Props> {
     };
   };
 
-  _navigate = key =>
+  _navigate = id =>
     this.props.navigation.navigate("RockDetail", {
-      rockId: key
+      rockId: id
     });
 
   render() {
@@ -51,12 +51,12 @@ class CollectionScreen extends React.Component<Props> {
         <FlatList
           style={styles.list}
           data={data}
-          keyExtractor={item => item.key}
+          keyExtractor={item => item.id}
           renderItem={({ item }) => (
             <RockListItem
-              id={item.key}
-              onPress={() => this._navigate(item.key)}
-              visited={this.props.scannedRocks[item.key]}
+              id={item.id}
+              onPress={() => this._navigate(item.id)}
+              visited={this.props.scannedRocks[item.id]}
             />
           )}
         />

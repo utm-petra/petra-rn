@@ -1,6 +1,5 @@
 export type Rock = {
   id: string,
-  key: string,
   name: string,
   qrCode: string,
   type: string,

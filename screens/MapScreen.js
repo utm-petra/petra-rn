@@ -110,7 +110,7 @@ class HomeScreen extends React.Component<Props, State> {
               rock.type && colorsForRockType.hasOwnProperty(rock.type)
                 ? colorsForRockType[rock.type]
                 : colorsForRockType.other;
-            const alreadyScanned = this.props.scannedRockIds.includes(rock.key);
+            const alreadyScanned = this.props.scannedRockIds.includes(rock.id);
             return (
               <MapView.Marker
                 coordinate={{
@@ -119,13 +119,13 @@ class HomeScreen extends React.Component<Props, State> {
                 }}
                 title={rock.name}
                 description={rock.mineralComposition}
-                key={rock.key}
+                key={rock.id}
                 pinColor={alreadyScanned ? color : "linen"}
               >
                 <MapView.Callout
                   onPress={() => {
                     this.props.navigation.push("RockDetail", {
-                      rockId: rock.key
+                      rockId: rock.id
                     });
                   }}
                   tooltip

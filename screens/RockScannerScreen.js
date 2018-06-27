@@ -165,8 +165,8 @@ class RockScannerScreen extends React.Component<Props, State> {
         .filter(o => o.qrCode === data);
       if (rocks.length > 0) {
         const rock = rocks[0];
-        this.props.visitRockId(rock.key);
-        this.setState({ scannedRockId: rock.key, dialogVisible: true });
+        this.props.visitRockId(rock.id);
+        this.setState({ scannedRockId: rock.id, dialogVisible: true });
       } else {
         //alert("Hmm... I don't recognize that.");
       }

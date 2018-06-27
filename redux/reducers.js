@@ -16,7 +16,7 @@ const rootConfig = {
 // blacklist the rock collection from redux persist so that it has to load from json every time
 const collectionConfig = {
   key: "collection",
-  blacklist: [ids, byId],
+  blacklist: [ids, byId, list],
   storage
 };
 
