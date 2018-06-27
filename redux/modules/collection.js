@@ -10,6 +10,7 @@ import type { State as EntireState } from "../state";
 // import the rock data, which is an array of objects
 const data = require("../data/rocks.json");
 const rocks = data.rocks;
+
 // denormalize it for performance
 let rockIds = [];
 let rocksById = {};

@@ -4,11 +4,12 @@ import React from "react";
 import { View, Platform } from "react-native";
 import { MapView, Constants, Location, Permissions } from "expo";
 import { MaterialIcons, FontAwesome } from "@expo/vector-icons";
-
+import { Chip, FAB, withTheme, Text } from "react-native-paper";
 import { connect } from "react-redux";
-import { Chip, FAB, withTheme } from "react-native-paper";
+
 import { selectors as getCollection } from "../redux/modules/collection";
 import { colorsForRockType } from "../constants/Colors";
+import styles from "../constants/Styles";
 import type { Rock } from "../constants/Types";
 
 const initialRegion = {
@@ -28,80 +29,46 @@ type Props = {
   rocks: Rock[],
   scannedRockIds: string[]
 };
-type State = {
-  region: MapView.AnimatedRegion,
-  location: MapView.Region,
-  errorMessage?: string
-};
 
-class HomeScreen extends React.Component<Props, State> {
+class HomeScreen extends React.Component<Props> {
   static navigationOptions = {
     header: null
   };
 
-  state = {
-    region: new MapView.AnimatedRegion({ ...initialRegion }),
-    location: null
-  };
+  _map: MapView;
 
-  componentDidMount() {
-    if (Platform.OS === "android" && !Constants.isDevice) {
-      this.setState({
-        errorMessage:
-          "Oops, this will not work on Sketch in an Android emulator. Try it on your device!"
-      });
-    } else {
-      this._getLocationAsync();
-    }
-  }
+  _animateToCurrentLocation = async () => {
+    const userLocation = await Location.getCurrentPositionAsync({
+      enableHighAccuracy: true
+    });
 
-  _getLocationAsync = async () => {
-    let { status } = await Permissions.askAsync(Permissions.LOCATION);
-    if (status !== "granted") {
-      this.setState({
-        errorMessage: "Permission to access location was denied"
-      });
-    }
-
-    Location.watchPositionAsync(
+    this._map.animateToRegion(
       {
-        enableHighAccuracy: true,
-        timeInterval: 1000 * 10 /*milliseconds*/,
-        distanceInterval: 50 /*meters*/
+        latitude: userLocation.coords.latitude,
+        longitude: userLocation.coords.longitude,
+        latitudeDelta: 0.005,
+        longitudeDelta: 0.005
       },
-      ({ coords }) => {
-        this.setState({
-          location: { latitude: coords.latitude, longitude: coords.longitude }
-        });
-      }
+      2000
     );
   };
 
-  _onRegionChange = region => this.state.region.setValue(region);
-  _resetRegion = () => {
-    const { region } = this.state;
-    region.timing({ ...initialRegion }, 300).start();
-  };
-
-  _goToLocation = () => {
-    const { region, location } = this.state;
-    if (location && location !== null)
-      region.timing({ ...location }, 300).start();
-  };
+  _animateToInitialRegion = () =>
+    this._map.animateToRegion(initialRegion, 2000);
 
   render() {
     const { rocks } = this.props;
-    const { location } = this.state;
 
     return (
       <View style={{ flex: 1 }}>
-        <MapView.Animated
+        <MapView
+          ref={r => (this._map = r)}
           style={{ flex: 1 }}
-          region={this.state.region}
-          onRegionChange={this._onRegionChange}
-          //mapType="hybrid"
+          initialRegion={initialRegion}
+          showsMyLocationButton={false}
+          showsUserLocation
         >
-          {rocks.map(rock => {
+          {rocks.map((rock, i) => {
             const color =
               rock.type && colorsForRockType.hasOwnProperty(rock.type)
                 ? colorsForRockType[rock.type]
@@ -117,6 +84,7 @@ class HomeScreen extends React.Component<Props, State> {
                 description={rock.mineralComposition}
                 key={rock.id}
                 pinColor={alreadyScanned ? color : "linen"}
+                zIndex={i}
               >
                 <MapView.Callout
                   onPress={() => {
@@ -135,22 +103,7 @@ class HomeScreen extends React.Component<Props, State> {
               </MapView.Marker>
             );
           })}
-          {location &&
-            location !== null && (
-              <MapView.Marker
-                coordinate={{
-                  latitude: location.latitude,
-                  longitude: location.longitude
-                }}
-              >
-                <MaterialIcons
-                  name={"radio-button-checked"}
-                  size={36}
-                  color={"blue"}
-                />
-              </MapView.Marker>
-            )}
-        </MapView.Animated>
+        </MapView>
         <View
           style={{
             position: "absolute",
@@ -166,12 +119,16 @@ class HomeScreen extends React.Component<Props, State> {
           <FAB
             small
             icon="my-location"
-            onPress={this._goToLocation}
+            onPress={this._animateToCurrentLocation}
             small
             style={{ marginBottom: 12 }}
             color="white"
           />
-          <FAB icon="location-on" onPress={this._resetRegion} color="white" />
+          <FAB
+            icon="location-on"
+            onPress={this._animateToInitialRegion}
+            color="white"
+          />
         </View>
       </View>
     );
