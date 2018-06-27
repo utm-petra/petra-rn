@@ -1,11 +1,11 @@
 import React from "react";
 import { ListItem } from "react-native-paper";
 import { connect } from "react-redux";
-import { selectors as collectionSelectors } from "../redux/modules/collection";
+import { selectors as getCollection } from "../redux/modules/collection";
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    rock: collectionSelectors.byId(state)[ownProps.id]
+    rock: getCollection.byId(state)[ownProps.id]
   };
 };
 

@@ -1,7 +1,10 @@
+// @flow
+
 export type Rock = {
   id: string,
   name: string,
   qrCode: string,
+  num: string,
   type: string,
   lat: number,
   lon: number,
@@ -10,6 +13,13 @@ export type Rock = {
   texture: string,
   interpretation: string,
   pics: string[]
+};
+
+export type RootInterface = {
+  ver: string,
+  info: string,
+  about: string,
+  rocks: Rock[]
 };
 
 export type Theme = {

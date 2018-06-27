@@ -22,7 +22,8 @@ import type { Rock } from "../constants/Types";
 
 const mapStateToProps = state => ({
   byId: getCollection.byId(state),
-  ids: getCollection.ids(state)
+  ids: getCollection.ids(state),
+  rocks: getCollection.rocks(state)
 });
 
 const mapDispatchToProps = { visitRockId };
@@ -30,6 +31,7 @@ const mapDispatchToProps = { visitRockId };
 type Props = {
   byId: { [id: string]: Rock },
   ids: string[],
+  rocks: Rock[],
   navigation: any,
   visitRockId: Function
 };
@@ -111,7 +113,7 @@ class RockScannerScreen extends React.Component<Props, State> {
       scannedRockId,
       qrCode
     } = this.state;
-    const { byId, ids } = this.props;
+    const { byId, ids, rocks } = this.props;
 
     return (
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
@@ -160,9 +162,7 @@ class RockScannerScreen extends React.Component<Props, State> {
   _handleBarCodeRead = ({ type, data }) => {
     this.setState({ qrCode: data });
     if (!this.state.dialogVisible) {
-      const rocks = this.props.ids
-        .map(id => this.props.byId[id])
-        .filter(o => o.qrCode === data);
+      const rocks = this.props.rocks.filter(o => o.qrCode === data);
       if (rocks.length > 0) {
         const rock = rocks[0];
         this.props.visitRockId(rock.id);

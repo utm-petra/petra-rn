@@ -7,7 +7,7 @@ import { MaterialIcons, FontAwesome } from "@expo/vector-icons";
 
 import { connect } from "react-redux";
 import { Chip, FAB, withTheme } from "react-native-paper";
-import { selectors as collectionSelectors } from "../redux/modules/collection";
+import { selectors as getCollection } from "../redux/modules/collection";
 import { colorsForRockType } from "../constants/Colors";
 import type { Rock } from "../constants/Types";
 
@@ -19,15 +19,13 @@ const initialRegion = {
 };
 
 const mapStateToProps = state => ({
-  ids: collectionSelectors.ids(state),
-  byId: collectionSelectors.byId(state),
-  scannedRockIds: collectionSelectors.scannedRockIds(state)
+  rocks: getCollection.rocks(state),
+  scannedRockIds: getCollection.scannedRockIds(state)
 });
 
 type Props = {
   navigation: any,
-  ids: string[],
-  byId: { [id: string]: Rock },
+  rocks: Rock[],
   scannedRockIds: string[]
 };
 type State = {
@@ -92,7 +90,7 @@ class HomeScreen extends React.Component<Props, State> {
   };
 
   render() {
-    const { ids, byId } = this.props;
+    const { rocks } = this.props;
     const { location } = this.state;
 
     return (
@@ -103,9 +101,7 @@ class HomeScreen extends React.Component<Props, State> {
           onRegionChange={this._onRegionChange}
           //mapType="hybrid"
         >
-          {ids.map(id => {
-            const rock = byId[id];
-            if (!rock) return null;
+          {rocks.map(rock => {
             const color =
               rock.type && colorsForRockType.hasOwnProperty(rock.type)
                 ? colorsForRockType[rock.type]

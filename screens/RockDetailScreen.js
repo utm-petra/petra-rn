@@ -20,16 +20,14 @@ import Carousel from "react-native-snap-carousel";
 import { connect } from "react-redux";
 import { MaterialIcons } from "@expo/vector-icons";
 
-import { selectors as collectionSelectors } from "../redux/modules/collection";
+import { selectors as getCollection } from "../redux/modules/collection";
 import Layout from "../constants/Layout";
 import { colorsForRockType } from "../constants/Colors";
 import type { Rock, Theme } from "../constants/Types";
 
 const mapStateToProps = (state, ownProps) => ({
-  rock: collectionSelectors.byId(state)[
-    ownProps.navigation.state.params.rockId
-  ],
-  visited: collectionSelectors
+  rock: getCollection.byId(state)[ownProps.navigation.state.params.rockId],
+  visited: getCollection
     .scannedRockIds(state)
     .includes(ownProps.navigation.state.params.rockId)
 });
@@ -68,7 +66,7 @@ class RockDetailScreen extends React.Component<Props> {
         style={[
           styles.container,
           {
-            backgroundColor: this.props.theme.background
+            backgroundColor: this.props.theme.colors.background
           }
         ]}
       >

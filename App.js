@@ -21,49 +21,9 @@ import store, { persistor } from "./redux/store";
 import { PersistGate } from "redux-persist/integration/react";
 
 // import the rock collection and a way to "hydrate" it if needed
-import {
-  selectors as collectionSelectors,
-  hydrateCollectionFromFile
-} from "./redux/modules/collection";
+import { selectors as getCollection } from "./redux/modules/collection";
 
 import { colorTheme } from "./constants/Colors";
-import type { Theme } from "./constants/Types";
-
-const mapStateToProps = state => ({
-  empty: collectionSelectors.ids(state).length === 0
-});
-
-const mapDispatchToProps = { hydrateCollectionFromFile };
-
-type Props = {
-  hydrateCollectionFromFile: Function,
-  theme: Theme
-};
-
-class AppWithNavigation extends React.Component<Props> {
-  componentDidMount() {
-    if (this.props.empty) {
-      this.props.hydrateCollectionFromFile();
-    }
-  }
-
-  render() {
-    return (
-      <View style={styles.container}>
-        <StatusBar
-          backgroundColor={this.props.theme.colors.primaryDark}
-          barStyle="dark-content"
-        />
-        <AppNavigator screenProps={{ theme: this.props.theme }} />
-      </View>
-    );
-  }
-}
-
-const ConnectedApp = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(withTheme(AppWithNavigation));
 
 export default class App extends React.Component<*> {
   render() {
@@ -71,7 +31,11 @@ export default class App extends React.Component<*> {
       <StoreProvider store={store}>
         <PaperProvider theme={colorTheme}>
           <PersistGate persistor={persistor} loading={null}>
-            <ConnectedApp />
+            <StatusBar
+              backgroundColor={colorTheme.colors.primaryDark}
+              barStyle="dark-content"
+            />
+            <AppNavigator screenProps={{ theme: colorTheme }} />
           </PersistGate>
         </PaperProvider>
       </StoreProvider>

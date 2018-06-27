@@ -8,7 +8,9 @@ import type { Rock } from "../../constants/Types";
 import type { State as EntireState } from "../state";
 
 // import the rock data, which is an array of objects
-const rocks = require("../data/rocks.json");
+const data = require("../data/rocks.json");
+const rocks = data.rocks;
+// denormalize it for performance
 let rockIds = [];
 let rocksById = {};
 rocks.map(r => {
@@ -52,6 +54,7 @@ const reducer = createReducer(INITIAL_STATE, {
 
 const getIds = (state: EntireState) => state.collection.ids;
 const getById = (state: EntireState) => state.collection.byId;
+const getRocks = (state: EntireState) => state.collection.list;
 const getScannedRocks = (state: EntireState) => state.collection.scannedRocks;
 const getScannedRockIds = createSelector([getScannedRocks], o =>
   Object.keys(o).filter(k => o[k])
@@ -60,6 +63,7 @@ const getScannedRockIds = createSelector([getScannedRocks], o =>
 const selectors = {
   ids: getIds,
   byId: getById,
+  rocks: getRocks,
   scannedRocks: getScannedRocks,
   scannedRockIds: getScannedRockIds
 };
