@@ -3,13 +3,13 @@
   "info":
     "This JSON file represents the UTM rock collection. The rocks and their info are contained in the array called rocks. Follow the Google style guide for JSON files (https://google.github.io/styleguide/jsoncstyleguide.xml).",
   "about":
-    "The courses ERS201 and ERS203, run by Dr. Dan Schulze until very recently, usually involved a component wherein the students would tour the campus alongside the professor, learning more about the rocks and outcrop present on campus. This app intends to replace a one-day tour into a continuous process, allowing students to learn more about the rocks and its corresponding history. It also makes them capable geologists in the making by enhancing their observational and interpretational skills involving rocks.\n\nThe main purpose of the app, Petra, is to serve as a database for easily accessible information of rocks on the UTM campus, to the students and staff of UTM, allowing them to actively engage in rock identification. Information on the rocks located on campus are not limited to just the mineralogy and name, but also include origin, types of fossils observed, and a brief description, if any.\n\nThe development of this app would have not been possible without the help of a certain few! I am thankful to Dr. Lindsay Schoenbohm for her guidance and input since inception. I am also grateful to Ramy Rafaat Esteero for spending time on app development. Without you, this app would have not been successfully executed. I would also like to appreciate Ustat Rai, for his work in creating the logo for ‘Petra’.\n\nSheila Ballantyne, the lab technician, was also pivotal in this project and facilitated the fabrication of labels that were installed on rocks and outcrops across campus. This increases awareness amongst students, stimulating them to use the app and learn more about the geological history of rocks and outcrops on campus.\n\nThis app hopes to inspire Earth Science students by exposing them to the adventurous and interpretive aspects of Geology. Hopefully with the use of this app, a few of you develop a genuine interest in geology or any of the earth sciences and pursue it as a future career option!\n\nHappy rock hunting!",
+    "The courses ERS201 and ERS203, run by Dr. Dan Schulze until very recently, usually involved a component wherein the students would tour the campus alongside the professor, learning more about the rocks and outcrops present on campus. This app intends to replace a one-day tour into a continuous process, allowing students to learn more about the rocks and its corresponding history. It also makes them capable geologists in the making by enhancing their observational and interpretational skills involving rocks.\n\nThe main purpose of the app, Petra, is to serve as a database for easily accessible information of rocks on the UTM campus, to the students and staff of UTM, allowing them to actively engage in rock identification. Information on the rocks located on campus are not limited to just the mineralogy and name, but also include origin, types of fossils observed, and a brief description, if any.\n\nThe development of this app would have not been possible without the help of a certain few! I am thankful to Dr. Lindsay Schoenbohm for her guidance and input since inception. I am also grateful to Ramy Rafaat Esteero for spending time on app development. Without you, this app would have not been successfully executed. I would also like to appreciate Ustat Rai, for his work in creating the logo for ‘Petra’.\n\nSheila Ballantyne, the lab technician, was also pivotal in this project and facilitated the fabrication of labels that were installed on rocks and outcrops across campus. This increases awareness amongst students, stimulating them to use the app and learn more about the geological history of rocks and outcrops on campus.\n\nThis app hopes to inspire Earth Science students by exposing them to the adventurous and interpretive aspects of Geology. Hopefully with the use of this app, a few of you develop a genuine interest in geology or any of the earth sciences and pursue it as a future career option!\n\nHappy rock hunting!",
   "rocks": [
     {
-      "id": "1",
-      "key": "granite1",
+      "id": "granite1",
       "name": "Granite - 1",
-      "qrCode": "10",
+      "qrCode": "Granite - 1",
+      "num": "10",
       "type": "Igneous",
       "lat": 43.5459,
       "lon": -79.6633,
@@ -22,10 +22,10 @@
       "pics": []
     },
     {
-      "id": "2",
-      "key": "tonalite1",
+      "id": "tonalite1",
       "name": "Tonalite (Trondhjemite) - 1",
-      "qrCode": "11",
+      "qrCode": "Tonalite (Trondhjemite) - 1",
+      "num": "11",
       "type": "Igneous",
       "lat": 43.5459,
       "lon": -79.6633,
@@ -38,10 +38,10 @@
       "pics": []
     },
     {
-      "id": "3",
-      "key": "granitePegmatite1",
+      "id": "granitePegmatite1",
       "name": "Granite Pegmatite - 1",
-      "qrCode": "13",
+      "qrCode": "Granite Pegmatite - 1",
+      "num": "13",
       "type": "Igneous",
       "lat": 43.5485,
       "lon": -79.6621,
@@ -54,10 +54,10 @@
       "pics": []
     },
     {
-      "id": "4",
-      "key": "syenite1",
+      "id": "syenite1",
       "name": "Syenite",
-      "qrCode": "14",
+      "qrCode": "Syenite",
+      "num": "14",
       "type": "Igneous",
       "lat": 43.5487,
       "lon": -79.6626,
@@ -70,10 +70,10 @@
       "pics": []
     },
     {
-      "id": "5",
-      "key": "tonalite2",
+      "id": "tonalite2",
       "name": "Tonalite (Trondhjemite) - 2",
-      "qrCode": "15",
+      "qrCode": "Tonalite (Trondhjemite) - 2",
+      "num": "15",
       "type": "Igneous",
       "lat": 43.5487,
       "lon": -79.6627,
@@ -86,10 +86,10 @@
       "pics": []
     },
     {
-      "id": "6",
-      "key": "granitePegmatite2",
+      "id": "granitePegmatite2",
       "name": "Granite Pegmatite - 2",
-      "qrCode": "2",
+      "qrCode": "Granite Pegmatite - 2",
+      "num": "2",
       "type": "Igneous",
       "lat": 43.5493,
       "lon": -79.6678,
@@ -102,10 +102,10 @@
       "pics": []
     },
     {
-      "id": "7",
-      "key": "granite2",
+      "id": "granite2",
       "name": "Granite - 2",
-      "qrCode": "7",
+      "qrCode": "Granite - 2",
+      "num": "7",
       "type": "Igneous",
       "lat": 43.5485,
       "lon": -79.6659,
@@ -118,10 +118,10 @@
       "pics": []
     },
     {
-      "id": "8",
-      "key": "tonalite3",
+      "id": "tonalite3",
       "name": "Tonalite (Trondhjemite) - 3",
-      "qrCode": "8",
+      "qrCode": "Tonalite (Trondhjemite) - 3",
+      "num": "8",
       "type": "Igneous",
       "lat": 43.5486,
       "lon": -79.6657,
@@ -135,10 +135,10 @@
       "pics": []
     },
     {
-      "id": "9",
-      "key": "gneiss1",
+      "id": "gneiss1",
       "name": "Gneiss - 1",
-      "qrCode": "1",
+      "qrCode": "Gneiss - 1",
+      "num": "1",
       "type": "Metamorphic",
       "lat": 43.5496,
       "lon": -79.6681,
@@ -151,10 +151,10 @@
       "pics": []
     },
     {
-      "id": "10",
-      "key": "migmatiticGneiss1",
+      "id": "migmatiticGneiss1",
       "name": "Migmatitic Gneiss - 1",
-      "qrCode": "12",
+      "qrCode": "Migmatitic Gneiss - 1",
+      "num": "12",
       "type": "Metamorphic",
       "lat": 43.5465,
       "lon": -79.663,
@@ -167,10 +167,10 @@
       "pics": []
     },
     {
-      "id": "11",
-      "key": "marble1",
+      "id": "marble1",
       "name": "Marble",
-      "qrCode": "16",
+      "qrCode": "Marble",
+      "num": "16",
       "type": "Metamorphic",
       "lat": 43.5482,
       "lon": -79.6654,
@@ -183,10 +183,10 @@
       "pics": []
     },
     {
-      "id": "12",
-      "key": "migmatiticGneiss2",
+      "id": "migmatiticGneiss2",
       "name": "Migmatitic Gneiss - 2",
-      "qrCode": "17",
+      "qrCode": "Migmatitic Gneiss - 2",
+      "num": "17",
       "type": "Metamorphic",
       "lat": 43.5481,
       "lon": -79.6654,
@@ -199,10 +199,10 @@
       "pics": []
     },
     {
-      "id": "13",
-      "key": "schist1",
+      "id": "schist1",
       "name": "Schist - 1",
-      "qrCode": "19",
+      "qrCode": "Schist - 1",
+      "num": "19",
       "type": "Metamorphic",
       "lat": 43.548,
       "lon": -79.6636,
@@ -215,10 +215,10 @@
       "pics": []
     },
     {
-      "id": "14",
-      "key": "mylonite1",
+      "id": "mylonite1",
       "name": "Mylonite",
-      "qrCode": "20",
+      "qrCode": "Mylonite",
+      "num": "20",
       "type": "Metamorphic",
       "lat": 43.548,
       "lon": -79.663,
@@ -231,10 +231,10 @@
       "pics": []
     },
     {
-      "id": "15",
-      "key": "gneiss2",
+      "id": "gneiss2",
       "name": "Gneiss - 2",
-      "qrCode": "21",
+      "qrCode": "Gneiss - 2",
+      "num": "21",
       "type": "Metamorphic",
       "lat": 43.5488,
       "lon": -79.6636,
@@ -248,10 +248,10 @@
       "pics": []
     },
     {
-      "id": "16",
-      "key": "schist2",
+      "id": "schist2",
       "name": "Schist - 2",
-      "qrCode": "3",
+      "qrCode": "Schist - 2",
+      "num": "3",
       "type": "Metamorphic",
       "lat": 43.5493,
       "lon": -79.6678,
@@ -264,10 +264,10 @@
       "pics": []
     },
     {
-      "id": "17",
-      "key": "schist3",
+      "id": "schist3",
       "name": "Schist - 3",
-      "qrCode": "32",
+      "qrCode": "Schist - 3",
+      "num": "32",
       "type": "Metamorphic",
       "lat": 43.5489,
       "lon": -79.6634,
@@ -280,10 +280,10 @@
       "pics": []
     },
     {
-      "id": "18",
-      "key": "migmatiticGneiss3",
+      "id": "migmatiticGneiss3",
       "name": "Migmatitic Gneiss - 3",
-      "qrCode": "33",
+      "qrCode": "Migmatitic Gneiss - 3",
+      "num": "33",
       "type": "Metamorphic",
       "lat": 43.5485,
       "lon": -79.6666,
@@ -296,10 +296,10 @@
       "pics": []
     },
     {
-      "id": "19",
-      "key": "amphibolite1",
+      "id": "amphibolite1",
       "name": "Amphibolite",
-      "qrCode": "5",
+      "qrCode": "Amphibolite",
+      "num": "5",
       "type": "Metamorphic",
       "lat": 43.5484,
       "lon": -79.6661,
@@ -312,10 +312,10 @@
       "pics": []
     },
     {
-      "id": "20",
-      "key": "migmatiticAmphibolite1",
+      "id": "migmatiticAmphibolite1",
       "name": "Migmatitic Amphibolite",
-      "qrCode": "A",
+      "qrCode": "Migmatitic Amphibolite",
+      "num": "A",
       "type": "Metamorphic",
       "lat": 43.5491,
       "lon": -79.668,
@@ -328,10 +328,10 @@
       "pics": []
     },
     {
-      "id": "21",
-      "key": "limestone1",
+      "id": "limestone1",
       "name": "Limestone - 1",
-      "qrCode": "26",
+      "qrCode": "Limestone - 1",
+      "num": "26",
       "type": "Sedimentary",
       "lat": 43.5484,
       "lon": -79.6619,
@@ -344,10 +344,10 @@
       "pics": []
     },
     {
-      "id": "22",
-      "key": "limestone2",
+      "id": "limestone2",
       "name": "Limestone - 2",
-      "qrCode": "27",
+      "qrCode": "Limestone - 2",
+      "num": "27",
       "type": "Sedimentary",
       "lat": 43.5484,
       "lon": -79.6619,
@@ -360,10 +360,10 @@
       "pics": []
     },
     {
-      "id": "23",
-      "key": "limestone3",
+      "id": "limestone3",
       "name": "Limestone - 3",
-      "qrCode": "28",
+      "qrCode": "Limestone - 3",
+      "num": "28",
       "type": "Sedimentary",
       "lat": 43.5484,
       "lon": -79.6619,
@@ -376,10 +376,10 @@
       "pics": []
     },
     {
-      "id": "24",
-      "key": "limestone4",
+      "id": "limestone4",
       "name": "Limestone - 4",
-      "qrCode": "29",
+      "qrCode": "Limestone - 4",
+      "num": "29",
       "type": "Sedimentary",
       "lat": 43.548,
       "lon": -79.6629,
@@ -392,10 +392,10 @@
       "pics": []
     },
     {
-      "id": "25",
-      "key": "limestone5",
+      "id": "limestone5",
       "name": "Limestone - 5",
-      "qrCode": "30",
+      "qrCode": "Limestone - 5",
+      "num": "30",
       "type": "Sedimentary",
       "lat": 43.548,
       "lon": -79.663,
@@ -408,10 +408,10 @@
       "pics": []
     },
     {
-      "id": "26",
-      "key": "limestone6",
+      "id": "limestone6",
       "name": "Limestone - 6",
-      "qrCode": "31",
+      "qrCode": "Limestone - 6",
+      "num": "31",
       "type": "Sedimentary",
       "lat": 43.5486,
       "lon": -79.6637,
@@ -424,10 +424,10 @@
       "pics": []
     },
     {
-      "id": "27",
-      "key": "sandstone",
+      "id": "sandstone",
       "name": "Sandstone",
-      "qrCode": "35",
+      "qrCode": "Sandstone",
+      "num": "35",
       "type": "Sedimentary",
       "lat": 43.5489,
       "lon": -79.6635,
@@ -440,10 +440,10 @@
       "pics": []
     },
     {
-      "id": "28",
-      "key": "talusBreccia1",
+      "id": "talusBreccia1",
       "name": "Talus Breccia",
-      "qrCode": "4",
+      "qrCode": "Talus Breccia",
+      "num": "4",
       "type": "Sedimentary",
       "lat": 43.5491,
       "lon": -79.668,
@@ -456,10 +456,10 @@
       "pics": []
     },
     {
-      "id": "29",
-      "key": "limestone7",
+      "id": "limestone7",
       "name": "Limestone - 7",
-      "qrCode": "6",
+      "qrCode": "Limestone - 7",
+      "num": "6",
       "type": "Sedimentary",
       "lat": 43.5484,
       "lon": -79.6661,
@@ -472,10 +472,10 @@
       "pics": []
     },
     {
-      "id": "30",
-      "key": "limestone8",
+      "id": "limestone8",
       "name": "Limestone - 8",
-      "qrCode": "9",
+      "qrCode": "Limestone - 8",
+      "num": "9",
       "type": "Sedimentary",
       "lat": 43.5466,
       "lon": -79.6627,
@@ -488,10 +488,10 @@
       "pics": []
     },
     {
-      "id": "31",
-      "key": "solutionBreccia1",
+      "id": "solutionBreccia1",
       "name": "Solution breccia",
-      "qrCode": "B",
+      "qrCode": "Solution breccia",
+      "num": "B",
       "type": "Sedimentary",
       "lat": 43.5494,
       "lon": -79.668,

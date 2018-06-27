@@ -8,21 +8,13 @@ import type { Rock } from "../../constants/Types";
 import type { State as EntireState } from "../state";
 
 // import the rock data, which is an array of objects
-import dat from "../data/rocks";
-
-export function hydrateCollectionFromFile(): ThunkAction {
-  return dispatch => {
-    let blob = {};
-    dat.forEach(o => {
-      blob[o.key] = o;
-    });
-
-    dispatch({
-      type: "COLLECTION_SET",
-      payload: { byId: blob, ids: Object.keys(blob) }
-    });
-  };
-}
+const rocks = require("../data/rocks.json");
+let rockIds = [];
+let rocksById = {};
+rocks.map(r => {
+  rockIds.push(r.id);
+  rocksById[r.id] = r;
+});
 
 export function visitRockId(id: string): ThunkAction {
   return dispatch => {
@@ -37,8 +29,8 @@ type State = {
 };
 
 const INITIAL_STATE: State = {
-  ids: [],
-  byId: {},
+  ids: rockIds,
+  byId: rocks,
   scannedRocks: {}
 };
 
