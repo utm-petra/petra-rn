@@ -4,6 +4,7 @@ import React from "react";
 import { ScrollView } from "react-native";
 import { Text, Paragraph, ToolbarContent } from "react-native-paper";
 import styles from "../constants/Styles";
+import GradientBackground from "../components/GradientBackground";
 
 const about = require("../redux/data/rocks.json").about;
 
@@ -13,9 +14,7 @@ export default class AboutScreen extends React.Component<Props> {
   static navigationOptions = ({ screenProps }: any) => {
     return {
       headerTitle: <ToolbarContent title="About Petra" />,
-      headerStyle: {
-        backgroundColor: screenProps.theme.colors.primary
-      }
+      headerBackground: <GradientBackground theme={screenProps.theme} />
     };
   };
 

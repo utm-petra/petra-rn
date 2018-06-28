@@ -9,6 +9,7 @@ import { Toolbar, ToolbarBackAction, ToolbarContent } from "react-native-paper";
 
 import RockListItem from "../components/RockListItem";
 import type { Rock } from "../constants/Types";
+import GradientBackground from "../components/GradientBackground";
 
 const mapStateToProps = state => ({
   ids: getCollection.ids(state),
@@ -26,10 +27,7 @@ type Props = {
 class CollectionScreen extends React.Component<Props> {
   static navigationOptions = ({ screenProps }: any) => {
     return {
-      headerTitle: <ToolbarContent title="UTM Rock Collection" />,
-      headerStyle: {
-        backgroundColor: screenProps.theme.colors.primary
-      }
+      headerBackground: <GradientBackground theme={screenProps.theme} />
     };
   };
 

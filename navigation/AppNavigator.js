@@ -8,6 +8,8 @@ import MainTabNavigator from "./MainTabNavigator";
 import RockDetailsScreen from "../screens/RockDetailScreen";
 import ImageLightboxScreen from "../screens/ImageLightboxScreen";
 
+import GradientBackground from "../components/GradientBackground";
+
 const DetailsStack = createStackNavigator(
   {
     RockDetail: {
@@ -29,7 +31,8 @@ const DetailsStack = createStackNavigator(
     mode: "card",
     navigationOptions: ({ navigation, screenProps }) => ({
       headerTintColor: screenProps.theme.colors.text,
-      headerStyle: { backgroundColor: screenProps.theme.colors.primary }
+      headerBackground: <GradientBackground theme={screenProps.theme} />,
+      headerStyle: { backgroundColor: "transparent" }
     })
   }
 );

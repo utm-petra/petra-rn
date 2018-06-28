@@ -8,13 +8,13 @@ export const colorTheme: Theme = {
   roundness: 4,
   colors: {
     ...DefaultTheme.colors,
-    primary: "#FFECB3",
-    primaryDark: "#ca9b52",
-    primaryLight: "#fffdc0",
-    secondary: "Colors.cyan800",
-    secondaryDark: "#005662",
-    secondaryLight: "#4fb3bf",
-    accent: "#00BFA5"
+    primary: "#EADDD8",
+    primaryDark: "#d3bead",
+    primaryLight: "#F7F1EF",
+    secondary: "#9ECED9",
+    secondaryDark: "#627C8C",
+    secondaryLight: "#B4DDE7",
+    accent: "#3E8CAC"
   }
 };
 

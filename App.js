@@ -1,7 +1,7 @@
 // @flow
 
 import React from "react";
-import { View, StatusBar } from "react-native";
+import { View, StatusBar, Platform } from "react-native";
 
 // the StoreProvider will link our app to the Redux store we created
 import { Provider as StoreProvider, connect } from "react-redux";
@@ -31,11 +31,9 @@ export default class App extends React.Component<*> {
       <StoreProvider store={store}>
         <PaperProvider theme={colorTheme}>
           <PersistGate persistor={persistor} loading={null}>
-            <StatusBar
-              backgroundColor={colorTheme.colors.primaryDark}
-              barStyle="dark-content"
-            />
-            <AppNavigator screenProps={{ theme: colorTheme }} />
+            <View style={{ flex: 1 }}>
+              <AppNavigator screenProps={{ theme: colorTheme }} />
+            </View>
           </PersistGate>
         </PaperProvider>
       </StoreProvider>
