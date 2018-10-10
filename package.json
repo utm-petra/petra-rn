@@ -21,7 +21,6 @@
     "react-native-snap-carousel": "^3.7.5",
     "react-native-view-transformer-next": "^0.0.30",
     "react-navigation": "^2.17.0",
-    "react-navigation-fluid-transitions": "^0.2.72",
     "react-navigation-material-bottom-tabs": "^0.4.0",
     "react-redux": "^5.0.7",
     "redux": "^4.0.0",

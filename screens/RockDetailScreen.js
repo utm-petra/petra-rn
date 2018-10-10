@@ -17,7 +17,6 @@ import {
 import Carousel from "react-native-snap-carousel";
 import { connect } from "react-redux";
 import { MaterialIcons } from "@expo/vector-icons";
-import { Transition } from "react-navigation-fluid-transitions";
 
 import { selectors as getCollection } from "../redux/modules/collection";
 import Layout from "../constants/Layout";

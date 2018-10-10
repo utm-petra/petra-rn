@@ -4,7 +4,6 @@ import React from "react";
 import * as Expo from "expo";
 import { View, ScrollView, Image } from "react-native";
 import ImageZoom from "react-native-image-zoom";
-import { Transition } from "react-navigation-fluid-transitions";
 
 import Layout from "../constants/Layout";
 
