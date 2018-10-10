@@ -24,6 +24,9 @@ import { PersistGate } from "redux-persist/integration/react";
 import { selectors as getCollection } from "./redux/modules/collection";
 
 import { colorTheme } from "./constants/Colors";
+import { useScreens } from "react-native-screens";
+
+useScreens();
 
 export default class App extends React.Component<*> {
   render() {

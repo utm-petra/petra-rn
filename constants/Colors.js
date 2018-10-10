@@ -28,3 +28,9 @@ export const colorsForRockType = {
   igneous: "#FF6F6B",
   other: "#43AFF9"
 };
+
+export const torontoColors = {
+  blue: "#00204E",
+  red: "#BB133E",
+  white: "#fff"
+};

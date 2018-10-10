@@ -2,16 +2,7 @@
 
 import React from "react";
 import { View, StyleSheet } from "react-native";
-import {
-  Headline,
-  Dialog,
-  DialogContent,
-  DialogTitle,
-  Paragraph,
-  DialogActions,
-  Button,
-  Text
-} from "react-native-paper";
+import { Headline, Dialog, Paragraph, Button, Text } from "react-native-paper";
 import { BarCodeScanner, Permissions } from "expo";
 import { connect } from "react-redux";
 import {
@@ -130,20 +121,20 @@ class RockScannerScreen extends React.Component<Props, State> {
           <View />
         )}
         <Dialog visible={dialogVisible} onDismiss={this._hideDialog}>
-          <DialogTitle>{"Rock Scanned"}</DialogTitle>
-          <DialogContent>
+          <Dialog.Title>{"Rock Scanned"}</Dialog.Title>
+          <Dialog.Content>
             <Paragraph>
               {(byId[scannedRockId] &&
                 `🔎 Looks like... ${byId[scannedRockId].name}!`) ||
                 ""}
             </Paragraph>
-          </DialogContent>
-          <DialogActions>
+          </Dialog.Content>
+          <Dialog.Actions>
             <Button onPress={this._hideDialog}>Dismiss</Button>
             <Button primary onPress={this._navigate}>
               Details
             </Button>
-          </DialogActions>
+          </Dialog.Actions>
         </Dialog>
         <View
           style={{

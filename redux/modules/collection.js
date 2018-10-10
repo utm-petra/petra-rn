@@ -15,6 +15,10 @@ const rocks = data.rocks;
 let rockIds = [];
 let rocksById = {};
 rocks.map(r => {
+  // locations are approximate
+  // we add a littel randomness to deal with overlapping locations
+  r.lat = r.lat + Math.random() / 50000;
+  r.lon = r.lon + Math.random() / 50000;
   rockIds.push(r.id);
   rocksById[r.id] = r;
 });

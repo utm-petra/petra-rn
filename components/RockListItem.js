@@ -1,5 +1,5 @@
 import React from "react";
-import { ListItem } from "react-native-paper";
+import { List } from "react-native-paper";
 import { connect } from "react-redux";
 import { selectors as getCollection } from "../redux/modules/collection";
 
@@ -13,7 +13,7 @@ class RockListItem extends React.PureComponent {
   render() {
     const { rock, visited } = this.props;
     return (
-      <ListItem
+      <List.Item
         title={rock.name}
         description={rock.mineralComposition}
         {...this.props}

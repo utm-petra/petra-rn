@@ -22,7 +22,7 @@ const MapStack = createStackNavigator({
 
 MapStack.navigationOptions = {
   tabBarLabel: "Map",
-  tabBarIcon: tabBarIcon("map")
+  tabBarIcon: tabBarIcon("map-marker-radius")
 };
 
 // Rock collection list
@@ -31,8 +31,8 @@ const CollectionStack = createStackNavigator({
 });
 
 CollectionStack.navigationOptions = ({ navigation }) => ({
-  tabBarLabel: "Collection",
-  tabBarIcon: tabBarIcon("view-list")
+  tabBarLabel: "Rock Collection",
+  tabBarIcon: tabBarIcon("format-list-checks")
 });
 
 // QR scanner screen
@@ -41,8 +41,8 @@ const RockScannerStack = createStackNavigator({
 });
 
 RockScannerStack.navigationOptions = {
-  tabBarLabel: "Scan",
-  tabBarIcon: tabBarIcon("fullscreen")
+  tabBarLabel: "Scan a Rock",
+  tabBarIcon: tabBarIcon("qrcode-scan")
 };
 
 // About Petra screen
@@ -52,7 +52,7 @@ const AboutStack = createStackNavigator({
 
 AboutStack.navigationOptions = {
   tabBarLabel: "About",
-  tabBarIcon: tabBarIcon("info")
+  tabBarIcon: tabBarIcon("information-outline")
 };
 
 const tabbarVisible = navigation => {

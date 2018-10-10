@@ -5,7 +5,7 @@ import { FlatList, View } from "react-native";
 import styles from "../constants/Styles";
 import { connect } from "react-redux";
 import { selectors as getCollection } from "../redux/modules/collection";
-import { Toolbar, ToolbarBackAction, ToolbarContent } from "react-native-paper";
+import { Appbar } from "react-native-paper";
 
 import RockListItem from "../components/RockListItem";
 import type { Rock } from "../constants/Types";
@@ -27,7 +27,8 @@ type Props = {
 class CollectionScreen extends React.Component<Props> {
   static navigationOptions = ({ screenProps }: any) => {
     return {
-      headerBackground: <GradientBackground theme={screenProps.theme} />
+      headerBackground: <GradientBackground theme={screenProps.theme} />,
+      headerTitle: <Appbar.Content title="UTM Rock Collection" />
     };
   };
 

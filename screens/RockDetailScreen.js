@@ -7,15 +7,13 @@ import {
   Headline,
   Text,
   Card,
-  CardCover,
-  CardContent,
   Title,
   Subheading,
   Paragraph,
-  CardActions,
   Button,
   withTheme
 } from "react-native-paper";
+
 import Carousel from "react-native-snap-carousel";
 import { connect } from "react-redux";
 import { MaterialIcons } from "@expo/vector-icons";
@@ -42,7 +40,7 @@ class RockDetailScreen extends React.Component<Props> {
   _renderItem = ({ item, index }) => (
     <View style={{ paddingHorizontal: 2, paddingVertical: 8 }}>
       <Card elevation={4} onPress={() => this._zoomImage(Images[item])}>
-        <CardCover source={Images[item]} />
+        <Card.Cover source={Images[item]} />
       </Card>
     </View>
   );
@@ -70,7 +68,7 @@ class RockDetailScreen extends React.Component<Props> {
           }}
           layout={"default"}
           data={data}
-          firstItem={data.length > 1 ? 1 : 0}
+          firstItem={0}
           renderItem={this._renderItem}
           itemWidth={w - 64}
           sliderWidth={w}
@@ -78,7 +76,7 @@ class RockDetailScreen extends React.Component<Props> {
         />
         <View style={{ padding: 8 }}>
           <Card>
-            <CardContent>
+            <Card.Content>
               <View style={{ flexDirection: "row", alignItems: "center" }}>
                 <Headline>{rock.name}</Headline>
                 {this.props.visited && (
@@ -102,7 +100,7 @@ class RockDetailScreen extends React.Component<Props> {
               <Subheading>{rock.mineralComposition}</Subheading>
               <Paragraph>{rock.texture}</Paragraph>
               <Paragraph>{rock.interpretation}</Paragraph>
-            </CardContent>
+            </Card.Content>
           </Card>
         </View>
       </ScrollView>
