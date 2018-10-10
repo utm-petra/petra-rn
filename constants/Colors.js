@@ -8,9 +8,9 @@ export const colorTheme: Theme = {
   roundness: 4,
   colors: {
     ...DefaultTheme.colors,
-    primary: "#EADDD8",
-    primaryDark: "#d3bead",
-    primaryLight: "#F7F1EF",
+    primary: "#D6B788",
+    primaryDark: "#685E52",
+    primaryLight: "#EDE4D9",
     secondary: "#9ECED9",
     secondaryDark: "#627C8C",
     secondaryLight: "#B4DDE7",
@@ -33,4 +33,10 @@ export const torontoColors = {
   blue: "#00204E",
   red: "#BB133E",
   white: "#fff"
+};
+
+export const petraColors = {
+  darkBrown: "#685E52",
+  brown: "#D6B788",
+  lightBrown: "#EDE4D9"
 };
