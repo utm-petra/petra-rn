@@ -13,6 +13,7 @@ import {
   Button,
   withTheme
 } from "react-native-paper";
+import ImageView from "react-native-image-view";
 
 import Carousel from "react-native-snap-carousel";
 import { connect } from "react-redux";
@@ -33,13 +34,19 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 type Props = { navigation: any, rock: Rock, visited: boolean, theme: Theme };
-
-class RockDetailScreen extends React.Component<Props> {
+type State = { lightboxVisible: false, imageIndex: number };
+class RockDetailScreen extends React.Component<State, Props> {
   _carousel: Carousel;
+  state = { lightboxVisible: false, imageIndex: 0 };
 
   _renderItem = ({ item, index }) => (
     <View style={{ paddingHorizontal: 2, paddingVertical: 8 }}>
-      <Card elevation={4} onPress={() => this._zoomImage(Images[item])}>
+      <Card
+        elevation={4}
+        onPress={() =>
+          this.setState({ lightboxVisible: true, imageIndex: index })
+        }
+      >
         <Card.Cover source={Images[item]} />
       </Card>
     </View>
@@ -103,6 +110,17 @@ class RockDetailScreen extends React.Component<Props> {
             </Card.Content>
           </Card>
         </View>
+        <ImageView
+          images={this.props.rock.pics.map(i => {
+            return {
+              source: Images[i],
+              width: 200,
+              height: 200
+            };
+          })}
+          isVisible={this.state.lightboxVisible}
+          imageIndex={this.state.imageIndex}
+        />
       </ScrollView>
     );
   }

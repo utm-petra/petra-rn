@@ -7,7 +7,7 @@ import { View, StatusBar, Platform } from "react-native";
 import { Provider as StoreProvider, connect } from "react-redux";
 
 // the PaperProvider will provide our app with theming and design by Paper
-import { Provider as PaperProvider, withTheme } from "react-native-paper";
+import { Provider as PaperProvider } from "react-native-paper";
 
 // the app navigation framework setup in React Navigation
 import AppNavigator from "./navigation/AppNavigator";
@@ -24,8 +24,9 @@ import { PersistGate } from "redux-persist/integration/react";
 import { selectors as getCollection } from "./redux/modules/collection";
 
 import { colorTheme } from "./constants/Colors";
-import { useScreens } from "react-native-screens";
 
+// enable react-native-screens for performance
+import { useScreens } from "react-native-screens";
 useScreens();
 
 export default class App extends React.Component<*> {
