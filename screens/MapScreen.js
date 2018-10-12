@@ -37,7 +37,7 @@ type Props = {
 type State = {
   fontsLoaded: boolean
 };
-class HomeScreen extends React.Component<Props, State> {
+class MapScreen extends React.Component<Props, State> {
   static navigationOptions = {
     header: null
   };
@@ -186,4 +186,4 @@ class HomeScreen extends React.Component<Props, State> {
   }
 }
 
-export default connect(mapStateToProps)(withTheme(HomeScreen));
+export default connect(mapStateToProps)(withTheme(MapScreen));

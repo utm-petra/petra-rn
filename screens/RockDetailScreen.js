@@ -1,7 +1,13 @@
 //@flow
 
 import React from "react";
-import { View, Image, ScrollView } from "react-native";
+import {
+  View,
+  Image,
+  ScrollView,
+  TouchableWithoutFeedback,
+  Platform
+} from "react-native";
 import styles from "../constants/Styles";
 import {
   Headline,
@@ -15,7 +21,7 @@ import {
 } from "react-native-paper";
 import ImageView from "react-native-image-view";
 
-import Carousel from "react-native-snap-carousel";
+import Carousel, { Pagination } from "react-native-snap-carousel";
 import { connect } from "react-redux";
 import { MaterialIcons } from "@expo/vector-icons";
 
@@ -32,6 +38,9 @@ const mapStateToProps = (state, ownProps) => ({
     .includes(ownProps.navigation.state.params.rockId)
 });
 
+const W = Layout.window.width;
+const H = Layout.window.height * 0.4;
+
 type Props = { navigation: any, rock: Rock, visited: boolean, theme: Theme };
 type State = { lightboxVisible: false, imageIndex: number };
 class RockDetailScreen extends React.Component<State, Props> {
@@ -39,26 +48,45 @@ class RockDetailScreen extends React.Component<State, Props> {
   state = { lightboxVisible: false, imageIndex: 0 };
 
   _renderItem = ({ item, index }) => (
-    <View style={{ paddingHorizontal: 2, paddingVertical: 8 }}>
-      <Card
-        elevation={4}
-        onPress={() =>
-          this.setState({ lightboxVisible: true, imageIndex: index })
-        }
+    <TouchableWithoutFeedback
+      onPress={() =>
+        this.setState({ lightboxVisible: true, imageIndex: index })
+      }
+    >
+      <View
+        style={{
+          justifyContent: "center",
+          alignItems: "center"
+        }}
       >
-        <Card.Cover source={Images[item]} />
-      </Card>
-    </View>
+        <Image
+          source={Images[item]}
+          style={{
+            width: W - 12,
+            height: H - 12,
+            resizeMode: "center",
+            borderRadius: 12,
+            ...Platform.select({
+              ios: {
+                shadowColor: "#000",
+                shadowOffset: { width: 0, height: 2 },
+                shadowOpacity: 0.8,
+                shadowRadius: 2
+              },
+              android: {
+                elevation: 5
+              }
+            })
+          }}
+        />
+      </View>
+    </TouchableWithoutFeedback>
   );
-
-  _zoomImage = imageSource =>
-    this.props.navigation.navigate("ImageLightbox", { imageSource });
 
   render() {
     const { rock } = this.props;
     const data = rock.pics;
-    const w = Layout.window.width;
-    const h = Layout.window.height * 0.3;
+
     return (
       <ScrollView
         style={[
@@ -76,9 +104,27 @@ class RockDetailScreen extends React.Component<State, Props> {
           data={data}
           firstItem={0}
           renderItem={this._renderItem}
-          itemWidth={w - 64}
-          sliderWidth={w}
-          sliderHeight={h}
+          itemWidth={W}
+          itemHeight={H}
+          sliderWidth={W}
+          sliderHeight={H}
+          onSnapToItem={index =>
+            this.setState({ imageIndex: index, lightboxVisible: false })
+          }
+        />
+        <Pagination
+          dotsLength={data.length}
+          activeDotIndex={this.state.imageIndex}
+          containerStyle={{ paddingVertical: 8 }}
+          dotStyle={{
+            width: 10,
+            height: 10,
+            borderRadius: 5,
+            marginHorizontal: 8,
+            backgroundColor: "rgba(0, 0, 0, 0.8)"
+          }}
+          inactiveDotOpacity={0.4}
+          inactiveDotScale={0.6}
         />
         <View style={{ padding: 8 }}>
           <Card>
@@ -113,8 +159,8 @@ class RockDetailScreen extends React.Component<State, Props> {
           images={this.props.rock.pics.map(i => {
             return {
               source: Images[i],
-              width: 200,
-              height: 200
+              width: W,
+              height: W
             };
           })}
           isVisible={this.state.lightboxVisible}
