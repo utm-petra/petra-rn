@@ -3,7 +3,7 @@
 import React from "react";
 import * as Expo from "expo";
 import { View, ScrollView, Image } from "react-native";
-import ImageZoom from "react-native-image-zoom";
+import ImageView from "react-native-image-view";
 
 import Layout from "../constants/Layout";
 
@@ -28,22 +28,9 @@ export default class ImageLightboxScreen extends React.Component<Props> {
   render() {
     const source = this.props.navigation.getParam("imageSource", null);
     return (
-      <ScrollView
-        maximumZoomScale={4}
-        minimumZoomScale={0.25}
-        bouncesZoom={true}
-        style={{
-          flex: 1,
-          backgroundColor: "rgba(0,0,0,0.7)"
-        }}
-        contentContainerStyle={{
-          padding: 24,
-          alignItems: "center",
-          justifyContent: "center"
-        }}
-      >
-        <Image source={source} />
-      </ScrollView>
+      <View>
+        <ImageView images={[{ source }]} imageIndex={0} isVisible />
+      </View>
     );
   }
 }
